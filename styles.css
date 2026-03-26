@@ -1163,6 +1163,28 @@ footer {
     font-size: 0.9rem;
 }
 
+.admin-link {
+    color: var(--accent) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.admin-link:hover {
+    color: var(--white) !important;
+    background: rgba(201, 168, 76, 0.15);
+    transform: translateY(-1px);
+}
+
+.admin-icon {
+    font-size: 0.9rem;
+}
+
 /* ── Animations ── */
 @keyframes fadeInUp {
     from {
