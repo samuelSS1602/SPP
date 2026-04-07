@@ -6,7 +6,7 @@ const roomsData = {
         title: 'Deluxe Room A/C',
         description: 'Spacious and elegantly furnished room with modern amenities, perfect for Family and business travelers. Experience luxury and comfort in our premium deluxe suite.',
         icon: '🛏️',
-        price: 2499,
+        price: 3000,
         photos: ['assets/ROOM1.webp', 'assets/ROOM2.webp', 'assets/ROOM3.webp', 'assets/ROOM4.webp', 'assets/ROOM5.webp', 'assets/BATHROOM1.webp', 'assets/BATHROOM2.webp', 'assets/BATHROOM3.webp'],
         amenities: [
             { icon: '', text: 'King Bed' },
@@ -23,7 +23,7 @@ const roomsData = {
         title: 'Deluxe Room Non A/C',
         description: 'Comfortable and elegantly furnished room with modern amenities and modern furnishings. Perfect for budget-conscious travelers seeking comfort.',
         icon: '🛏️',
-        price: 1800,
+        price: 2000,
         photos: ['assets/ROOM4.webp', 'assets/ROOM5.webp', 'assets/ROOM6.webp', 'assets/BATHROOM2.webp'],
         amenities: [
             { icon: '', text: 'King Bed' },

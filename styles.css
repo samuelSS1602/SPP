@@ -1210,6 +1210,144 @@ footer {
     }
 }
 
+/* ── Guest Reviews Section ── */
+.reviews {
+    background: var(--cream);
+}
+
+.reviews-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--light-border);
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-soft);
+    border-left: 5px solid var(--accent);
+}
+
+.overall-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rating-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+}
+
+.rating-stars {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.rating-count {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.google-maps-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all var(--transition);
+}
+
+.google-maps-btn:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-2px);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 2.2rem;
+    border: 1px solid var(--light-border);
+    border-top: 3px solid var(--accent);
+    transition: all var(--transition);
+    position: relative;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.reviewer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.review-stars {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.review-source {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    font-style: italic;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.review-text::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--accent);
+    opacity: 0.2;
+    position: absolute;
+    top: -1.5rem;
+    left: -0.5rem;
+    font-family: serif;
+}
+
 /* ============================================
    Responsive Design
    ============================================ */
@@ -1390,6 +1528,17 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .reviews-overview {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
 
     footer {
