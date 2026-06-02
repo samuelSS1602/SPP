@@ -1947,7 +1947,37 @@ body {
     visibility: visible;
 }
 
-/* Floating WhatsApp Widget */
+/* Floating Widgets (WhatsApp & Call) */
+.floating-call-btn {
+    position: fixed;
+    bottom: 150px; /* Above WhatsApp */
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(197, 160, 71, 0.3);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    z-index: 999;
+}
+
+.floating-call-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.call-icon-svg {
+    width: 22px;
+    height: 22px;
+}
+
 .floating-whatsapp-btn {
     position: fixed;
     bottom: 90px;
@@ -1975,6 +2005,32 @@ body {
 .floating-whatsapp-btn:hover {
     transform: scale(1.1) translateY(-3px);
     background-color: #128C7E;
+}
+
+/* Slide-out Tooltips */
+.floating-btn-tooltip {
+    position: absolute;
+    right: 65px;
+    background: rgba(10, 22, 40, 0.95);
+    color: var(--text-white);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid rgba(197, 160, 71, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.floating-call-btn:hover .floating-btn-tooltip,
+.floating-whatsapp-btn:hover .floating-btn-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-5px);
 }
 
 /* ── 19. LEAD CAPTURE MODAL ── */
@@ -2439,9 +2495,19 @@ body {
         bottom: 20px;
         right: 20px;
     }
-    
+
     .floating-whatsapp-btn {
         bottom: 75px;
         right: 20px;
+    }
+
+    .floating-call-btn {
+        bottom: 130px;
+        right: 20px;
+    }
+    
+    /* Disable slide-out tooltips on mobile/touch screens to prevent visual noise */
+    .floating-btn-tooltip {
+        display: none !important;
     }
 }

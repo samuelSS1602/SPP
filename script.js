@@ -412,11 +412,23 @@ document.addEventListener('DOMContentLoaded', () => {
     selectUnitBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const unitName = btn.getAttribute('data-unit');
+            
+            // Map to main booking form dropdown
             if (selectDropdown) {
-                // Find matching option
                 for (let i = 0; i < selectDropdown.options.length; i++) {
                     if (selectDropdown.options[i].value === unitName) {
                         selectDropdown.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            // Map to modal popup form dropdown
+            const modalDropdown = document.getElementById('modalUnit');
+            if (modalDropdown) {
+                for (let i = 0; i < modalDropdown.options.length; i++) {
+                    if (modalDropdown.options[i].value === unitName) {
+                        modalDropdown.selectedIndex = i;
                         break;
                     }
                 }
