@@ -4,560 +4,1139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="Sri Padmavati Pleasants - Premium hotel booking with luxurious rooms and world-class amenities">
-    <title>Sri Padmavati Pleasants - Your Perfect Stay</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=e    
+    <!-- Primary Meta Tags -->    <title>Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani</title>
+    <meta name="title" content="Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani">
+    <meta name="description" content="Experience premium comfort at Sri Padmavati Pleasants, Palani. Clean luxury Deluxe A/C & Non-A/C rooms, safe private parking, 24/7 hot water, and close proximity to Palani Murugan Temple. Book your stay today.">
+    <meta name="keywords" content="Sri Padmavati Pleasants, lodge in Palani, rooms in Palani, budget hotel Palani, luxury rooms Palani, pilgrim stay Palani, hotels near Palani temple">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sripadmavatipleasants.com/">
+    <meta property="og:title" content="Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani">
+    <meta property="og:description" content="Premium luxury rooms and outstanding hospitality in Palani. Features clean rooms, safe car parking, 24/7 hot water, and a peaceful environment for families and pilgrims.">
+    <meta property="og:image" content="assets/MALAI.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sripadmavatipleasants.com/">
+    <meta property="twitter:title" content="Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani">
+    <meta property="twitter:description" content="Premium luxury rooms and outstanding hospitality in Palani. Features clean rooms, safe car parking, 24/7 hot water, and a peaceful environment for families and pilgrims.">
+    <meta property="twitter:image" content="assets/MALAI.webp">
+
+    <!-- DNS Prefetch & Preconnect -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Critical Images Preload -->
+    <!-- Preload Critical Assets -->
     <link rel="preload" as="image" href="assets/SPP PIC.webp" type="image/webp">
     <link rel="preload" as="image" href="assets/MALAI.webp" type="image/webp">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="assets/SPP PIC.webp">
+    <link rel="icon" type="image/webp" href="assets/fav.webp">
+    
+    <!-- JSON-LD Structured Data for Lodge / Hotel -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Sri Padmavati Pleasants",
+      "image": "assets/MALAI.webp",
+      "@id": "https://sripadmavatipleasants.com/#hotel",
+      "url": "https://sripadmavatipleasants.com/",
+      "telephone": "+916369216621",
+      "priceRange": "INR 2000 - 3000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "92/1A2, Idumban Kovil Road",
+        "addressLocality": "Palani",
+        "postalCode": "624601",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.4509748,
+        "longitude": 77.5190977
+      },
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "5.0"
+      },
+      "sameAs": [
+        "https://maps.app.goo.gl/jpgcTg5xoX3SN8fy5"
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="#home" class="logo">
-                <img src="assets/SPP PIC.webp" alt="SPP Logo" width="50" height="50" loading="eager" decoding="async">
-                <div class="logo-text">SRI PADMAVATI <span>PLEASANTS</span></div>
-            </a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+    <!-- 1. Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo-container">
+                <img src="assets/SPP PIC.webp" alt="Sri Padmavati Pleasants Logo" class="preloader-logo">
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#rooms">Rooms</a></li>
-                <li><a href="#features">Amenities</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="spinner"></div>
+            <p class="preloader-text">SRI PADMAVATI PLEASANTS</p>
+            <span class="preloader-subtitle">Luxurious Gateway in Palani</span>
+        </div>
+    </div>
+
+    <!-- 2. Sticky Navbar -->
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <img src="assets/SPP PIC.webp" alt="SPP Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">SRI PADMAVATI</span>
+                        <span class="logo-subtitle">PLEASANTS</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About Lodge</a></li>
+                    <li class="nav-item"><a href="#amenities" class="nav-link">Amenities</a></li>
+                    <li class="nav-item"><a href="#rooms" class="nav-link">Our Rooms</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="#location" class="nav-link">Location</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Reviews</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link nav-btn-cta">Book Room</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <section class="hero" id="home"
-        style="background: linear-gradient(135deg, rgba(45, 95, 63, 0.85), rgba(139, 69, 19, 0.75)), url('assets/MALAI.webp') center/cover !important;">
-        <div class="hero-content">
-            <img src="assets/SPP PIC.webp" alt="SPP Logo" width="120" height="120"
-                style="height: 120px; margin-bottom: 1rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(255,255,255,0.2); position: relative; z-index: 20; transform: translateY(-10px);"
-                loading="eager" decoding="async">
-            <h1>Sri Padmavati Pleasants</h1>
-            <p>Where Comfort Meets Elegance - Your Home Away From Home</p>
-            <a href="#rooms" class="cta-btn">View Our Rooms</a>
+    <!-- 3. Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-image-zoom" style="background-image: linear-gradient(to bottom, rgba(10, 22, 40, 0.8), rgba(10, 22, 40, 0.9)), url('assets/MALAI.webp');"></div>
         </div>
-    </section>
-
-    <section class="section" id="rooms">
-        <h2 class="section-title">Our Premium Accommodations</h2>
-        <p class="section-subtitle">Choose from our selection of carefully designed rooms for a memorable stay</p>
-        <div class="rooms-grid">
-            <div class="room-card" onclick="openRoomDetails('deluxe')">
-                <div class="room-image">
-                    <img src="assets/ROOM2.webp" alt="Deluxe Room A/C" width="100%" height="250" loading="lazy"
-                        decoding="async" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div class="room-badge">Popular</div>
-                </div>
-                <div class="room-content">
-                    <h3>Deluxe Room A/C</h3>
-                    <p>Spacious and elegantly furnished room with modern amenities, perfect for Family and business
-                        travelers.</p>
-                    <div class="room-features">
-                        <span class="feature-tag">King Bed</span>
-                        <span class="feature-tag">Smart TV</span>
-                        <span class="feature-tag">AC</span>
-                        <span class="feature-tag">Attached Bath</span>
-                    </div>
-                    <div class="room-price">₹3,000 <span>/ night</span></div>
-                    <button class="book-btn" onclick="openBooking(event, 'Deluxe Room A/C', 3000)">Book
-                        Now</button>
+        <div class="hero-content-wrapper container">
+            <div class="hero-content reveal-on-scroll">
+                <span class="hero-tagline"><span class="gold-dot"></span> PREMIUM COMFORT IN PALANI</span>
+                <h1 class="hero-title">Experience Premium Living At <br><span class="highlight-gold">Sri Padmavati Pleasants</span></h1>
+                <p class="hero-description">Nestled in the serene foothills of Palani, our luxury lodge offers elegantly designed, clean, and comfortable accommodations tailored for families, pilgrims, and business travelers.</p>
+                <div class="hero-ctas">
+                    <a href="#rooms" class="btn btn-primary">View Deluxe Rooms</a>
+                    <a href="#contact" class="btn btn-secondary trigger-popup-visit">Book A Room</a>
+                    <a href="https://wa.me/916369216621?text=Hello,%20I%20want%20to%20enquire%20about%20booking%20a%20room%20at%20Sri%20Padmavati%20Pleasants.%20Please%20send%20availability%20details." target="_blank" class="btn btn-outline">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.292-4.148c1.618.96 3.197 1.484 4.88 1.485 5.542.003 10.051-4.478 10.054-10.021.002-2.686-1.043-5.207-2.946-7.111C16.434 2.3 13.92 1.253 11.233 1.253 5.69 1.253 1.18 5.732 1.176 11.275c-.001 1.8.488 3.563 1.417 5.123L1.696 21.36l5.053-1.32c-.17-.1-.17-.1.4-.2zM18.13 15.666c-.33-.165-1.951-.964-2.252-1.074-.3-.109-.518-.165-.735.165-.218.33-.842 1.073-1.03 1.293-.19.219-.379.247-.708.082-.33-.165-1.393-.513-2.653-1.638-.98-.874-1.641-1.953-1.833-2.282-.19-.33-.02-.508.145-.671.148-.147.33-.384.495-.577.165-.192.219-.33.329-.548.11-.219.055-.411-.028-.576-.082-.165-.735-1.77-.999-2.428-.27-.66-.54-.57-.735-.57h-.628c-.219 0-.576.082-.876.411-.3.33-1.15 1.124-1.15 2.742 0 1.618 1.177 3.181 1.338 3.399.165.219 2.316 3.538 5.61 4.96.784.339 1.397.541 1.873.693.79.25 1.5.214 2.065.13.63-.093 1.952-.797 2.228-1.567.275-.769.275-1.428.193-1.567-.083-.14-.302-.222-.633-.387z"/>
+                        </svg>
+                        WhatsApp Booking
+                    </a>
                 </div>
             </div>
-
-            <div class="room-card" onclick="openRoomDetails('single')">
-                <div class="room-image">
-                    <img src="assets/ROOM4.webp" alt="Deluxe Room Non A/C" width="100%" height="250" loading="lazy"
-                        decoding="async" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div class="room-badge">Cozy</div>
+            
+            <!-- Quick Stats Badge Row -->
+            <div class="hero-stats-row reveal-on-scroll delay-2">
+                <div class="stat-badge">
+                    <span class="stat-badge-num count" data-target="15">0</span><span class="stat-badge-plus">+</span>
+                    <span class="stat-badge-lbl">Premium Rooms</span>
                 </div>
-                <div class="room-content">
-                    <h3>Deluxe Room Non A/C</h3>
-                    <p>Comfortable and elegantly furnished room with modern amenities and modern
-                        furnishings.</p>
-                    <div class="room-features">
-                        <span class="feature-tag">King Bed</span>
-                        <span class="feature-tag">Smart TV</span>
-                        <span class="feature-tag">Non A/C</span>
-                        <span class="feature-tag">Attached Bath</span>
-                    </div>
-                    <div class="room-price">₹2,000 <span>/ night</span></div>
-                    <button class="book-btn" onclick="openBooking(event, 'Deluxe Room Non A/C', 2000)">Book Now</button>
+                <div class="stat-badge">
+                    <span class="stat-badge-num count" data-target="1000">0</span><span class="stat-badge-plus">+</span>
+                    <span class="stat-badge-lbl">Happy Guests</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="stat-badge-num">100%</span>
+                    <span class="stat-badge-lbl">Safe & Secured</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="stat-badge-num">24/7</span>
+                    <span class="stat-badge-lbl">Support desk</span>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="section features" id="features">
-        <h2 class="section-title">World-Class Amenities</h2>
-        <p class="section-subtitle">Everything you need for a comfortable and memorable stay</p>
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">🚗</div>
-                <h3>Free Parking</h3>
-                <p>Complimentary secure parking facility available for all guests with 24/7 surveillance.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📶</div>
-                <h3>High-Speed WiFi</h3>
-                <p>Stay connected with free high-speed WiFi throughout the property for work or leisure.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🧺</div>
-                <h3>Laundry Service</h3>
-                <p>Professional laundry and dry-cleaning services available with quick turnaround time.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>24/7 Security</h3>
-                <p>Round-the-clock security with CCTV surveillance ensuring your safety and peace of mind.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section gallery" id="gallery">
-        <h2 class="section-title">Gallery</h2>
-        <p class="section-subtitle">Explore the beauty and elegance of Sri Padmavati Pleasants</p>
-        <div class="gallery-filters"
-            style="text-align: center; margin-bottom: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <button class="filter-btn active" onclick="filterGallery('all')">All</button>
-            <button class="filter-btn" onclick="filterGallery('room')">Rooms</button>
-            <button class="filter-btn" onclick="filterGallery('bathroom')">Bathrooms</button>
-            <button class="filter-btn" onclick="filterGallery('corridor')">Corridors</button>
-            <button class="filter-btn" onclick="filterGallery('parking')">Parking</button>
-        </div>
-        <div class="gallery-grid" id="galleryGrid">
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(0)">
-                <img src="assets/ROOM1.webp" alt="Room 1" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Deluxe Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(1)">
-                <img src="assets/ROOM2.webp" alt="Room 2" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(1)">
-                <img src="assets/ROOM3.webp" alt="Classic Room" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(2)">
-                <img src="assets/ROOM4.webp" alt="Room Interior" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(3)">
-                <img src="assets/ROOM5.webp" alt="Suite Details" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(4)">
-                <img src="assets/ROOM6.webp" alt="Room Amenities" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(5)">
-                <img src="assets/ROOM7.webp" alt="Premium Room" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(6)">
-                <img src="assets/ROOM8.webp" alt="Comfortable Stay" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(7)">
-                <img src="assets/ROOM9.webp" alt="Elegant Space" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="room" onclick="openGalleryModal(8)">
-                <img src="assets/ROOM10.webp" alt="Luxury Room" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Guest Room</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="bathroom" onclick="openGalleryModal(9)">
-                <img src="assets/BATHROOM1.webp" alt="Clean Bathroom" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Bathroom</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="bathroom" onclick="openGalleryModal(10)">
-                <img src="assets/BATHROOM2.webp" alt="Modern Bathroom" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Bathroom</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="bathroom" onclick="openGalleryModal(11)">
-                <img src="assets/BATHROOM3.webp" alt="Premium Bathroom" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Bathroom</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="bathroom" onclick="openGalleryModal(12)">
-                <img src="assets/BATHROOM4.webp" alt="Suite Bathroom" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Bathroom</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="corridor" onclick="openGalleryModal(13)">
-                <img src="assets/CORRIDOR1.webp" alt="Hotel Corridor" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Corridor</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="corridor" onclick="openGalleryModal(14)">
-                <img src="assets/CORRIDOR2.webp" alt="Elegant Walkway" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Corridor</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="corridor" onclick="openGalleryModal(15)">
-                <img src="assets/CORRIDOR3.webp" alt="Guest Floor Corridor" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Corridor</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="corridor" onclick="openGalleryModal(16)">
-                <img src="assets/CORRIDOR4.webp" alt="Lower Level Corridor" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Corridor</div>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="parking" onclick="openGalleryModal(17)">
-                <img src="assets/PARKING1.png" alt="Parking Area" width="100%" height="300" loading="lazy"
-                    style="width: 100%; height: 300px; object-fit: cover; cursor: pointer;">
-                <div class="gallery-item-overlay">
-                    <div class="gallery-item-text">Parking Area</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Lightbox Modal - Full Screen Image Viewer -->
-    <div class="gallery-lightbox" id="galleryLightbox">
-        <div class="lightbox-container" id="lightboxContainer">
-            <!-- Lightbox Controls Top Bar -->
-            <div class="lightbox-controls-top">
-                <div class="lightbox-info">
-                    <span class="lightbox-counter" id="lightboxCounter">1 / 18</span>
-                </div>
-                <div class="lightbox-buttons">
-                    <button class="lightbox-btn" onclick="toggleFullscreen()" title="Fullscreen"
-                        id="fullscreenBtn">⛶</button>
-                    <button class="lightbox-btn" onclick="closeGalleryModal()" title="Close">&times;</button>
-                </div>
-            </div>
-
-            <!-- Image Display Area -->
-            <div class="lightbox-image-container">
-                <img id="lightboxImage" src="" alt="Gallery Image" class="lightbox-image-full">
-            </div>
-
-            <!-- Navigation & Bottom Controls -->
-            <div class="lightbox-controls-bottom">
-                <button class="lightbox-nav lightbox-prev" onclick="navigateGallery(-1)" title="Previous">❮</button>
-                <button class="lightbox-nav lightbox-next" onclick="navigateGallery(1)" title="Next">❯</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Room Details Modal -->
-    <div class="room-details-modal" id="roomDetailsModal">
-        <div class="room-details-content">
-            <div class="room-details-header">
-                <span id="roomDetailsIcon" style="font-size: 6rem; opacity: 0.8;"></span>
-                <span class="room-details-close" onclick="closeRoomDetails()">&times;</span>
-            </div>
-            <div class="room-details-body">
-                <h2 class="room-details-title" id="roomDetailsTitle">Room Title</h2>
-                <p class="room-details-description" id="roomDetailsDescription">Room description goes here</p>
-
-                <div class="room-details-section">
-                    <h4>📷 Room Gallery</h4>
-                    <div class="room-details-photos" id="roomPhotosGallery">
-                        <!-- Photos will be inserted here -->
-                    </div>
-                </div>
-
-                <div class="room-details-section">
-                    <h4>✨ Amenities</h4>
-                    <div class="room-details-amenities" id="roomAmenitiesContainer">
-                        <!-- Amenities will be inserted here -->
-                    </div>
-                </div>
-
-                <div class="room-details-price">
-                    <span id="roomDetailsPriceValue">₹2,499</span> <span>/ night</span>
-                </div>
-
-                <button class="room-details-btn" onclick="openBookingFromDetails()">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Enquiry Modal -->
-    <div class="modal" id="bookingModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Send Enquiry</h2>
-                <span class="close-modal" onclick="closeBooking()">&times;</span>
-            </div>
-
-            <!-- Enquiry Form -->
-            <form id="enquiryForm" class="booking-step active" onsubmit="handleEnquiry(event)">
-                <div class="form-group">
-                    <label>Room Type</label>
-                    <input type="text" id="roomType" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="guestName" required placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" id="guestEmail" required placeholder="your.email@example.com">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" id="guestPhone" required placeholder="+91 98765 43210">
-                </div>
-                <div class="form-group">
-                    <label>Check-in Date *</label>
-                    <input type="date" required id="checkin">
-                </div>
-                <div class="form-group">
-                    <label>Check-out Date *</label>
-                    <input type="date" required id="checkout">
-                </div>
-                <div class="form-group">
-                    <label>Number of Guests *</label>
-                    <select id="guestCount" required>
-                        <option value="">Select number of guests</option>
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5+ Guests</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Your Message *</label>
-                    <textarea id="specialRequests" rows="4" required
-                        placeholder="Please share any special requests or questions..."></textarea>
-                </div>
-                <div class="total-display">
-                    <div class="price" id="totalPrice">₹0</div>
-                    <div class="nights" id="nightsDisplay">Select dates to see total</div>
-                </div>
-                <button type="submit" class="submit-btn">Send Enquiry</button>
-            </form>
-
-            <!-- Enquiry Confirmation -->
-            <div id="enquiryConfirmationStep" class="booking-step">
-                <div style="text-align: center; padding: 2rem;">
-                    <div style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;">📧</div>
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">Enquiry Sent
-                        Successfully!</h3>
-                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">Thank you for your interest. We will
-                        get back to you shortly.</p>
-
-                    <div
-                        style="background: linear-gradient(135deg, var(--light), #fffacd); padding: 1.5rem; border-radius: 10px; text-align: left; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
-                        <p style="margin-bottom: 0.8rem;"><strong>Enquiry Details:</strong></p>
-                        <p id="confirmationRoom" style="color: #666; margin-bottom: 0.5rem;"><strong>Room:</strong>
-                            Deluxe Room</p>
-                        <p id="confirmationGuest" style="color: #666; margin-bottom: 0.5rem;"><strong>Guest
-                                Name:</strong> John Doe</p>
-                        <p id="confirmationDates" style="color: #666; margin-bottom: 0.5rem;"><strong>Dates:</strong>
-                            Check-in - Check-out</p>
-                        <p id="confirmationGuests" style="color: #666; margin-bottom: 0.5rem;"><strong>Number of
-                                Guests:</strong> 2</p>
-                    </div>
-
-                    <p style="color: #888; font-size: 0.95rem; margin-bottom: 1rem;">A confirmation has been sent to
-                        <span id="confirmationEmail">your email</span>
-                    </p>
-                    <p style="color: #888; font-size: 0.95rem; margin-bottom: 2rem;">Our team will contact you at <span
-                            id="confirmationPhone">your phone</span></p>
-
-                    <div
-                        style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                        <button onclick="sendToWhatsApp()" class="submit-btn"
-                            style="background: linear-gradient(135deg, #25D366, #20BA5C); flex: 1; min-width: 200px;">
-                            📱 Send to WhatsApp
-                        </button>
-                        <button onclick="closeBooking()" class="submit-btn"
-                            style="flex: 1; min-width: 200px;">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Guest Reviews Section -->
-    <section class="section reviews" id="reviews">
-        <h2 class="section-title">What Our Guests Say</h2>
-        <p class="section-subtitle">Read verified reviews from our guests on Google Maps</p>
-
-        <div class="reviews-overview">
-            <div class="overall-rating">
-                <div class="rating-number">5.0</div>
-                <div class="rating-stars">⭐⭐⭐⭐⭐</div>
-                <div class="rating-count">10 Reviews on Google</div>
-            </div>
-            <a href="https://maps.app.goo.gl/jpgcTg5xoX3SN8fy5" target="_blank" class="google-maps-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg"
-                    alt="Google Maps" width="20">
-                View on Google Maps
+        <div class="hero-scroll-indicator">
+            <a href="#about" class="scroll-down-arrow">
+                <span></span>
+                <span></span>
             </a>
         </div>
+    </section>
 
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">S Moovendhan</div>
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+    <!-- 4. About Lodge Section -->
+    <section class="section about-project" id="about">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">THE SANCTUARY OF COMFORT</span>
+                <h2 class="section-title">About Sri Padmavati Pleasants</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text-col reveal-on-scroll">
+                    <h3 class="about-heading">A Peaceful & Sacred Gateway to Palani</h3>
+                    <p class="about-text">
+                        Sri Padmavati Pleasants is a premier lodging destination committed to delivering exceptional comfort, cleanliness, and premium hospitality experiences in the temple town of Palani. With our beautifully designed spaces and attentive staff, we provide the perfect retreat for pilgrims, families, and leisure travelers alike.
+                    </p>
+                    <p class="about-text">
+                        Framed by the panoramic views of the Palani hills, our property features state-of-the-art facilities, direct temple accessibility, and private parking. Whether you are visiting the holy Murugan Temple for a pilgrimage or transitioning on a family vacation, we ensure a warm, secure, and unforgettable home away from home.
+                    </p>
+                    <div class="about-signature-box">
+                        <div class="sig-details">
+                            <span class="sig-title">Sri Padmavati Lodging Team</span>
+                            <span class="sig-subtitle">Uncompromising Hospitality, Cleanliness & Value</span>
+                        </div>
                     </div>
-                    <div class="review-source">Google Review</div>
                 </div>
-                <p class="review-text">"Really amazing hospitality, friendly staff and clean rooms. Would highly
-                    recommend for others😀"</p>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">shyam kumar</div>
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                
+                <div class="about-features-col">
+                    <div class="features-grid">
+                        <!-- Card 1 -->
+                        <div class="feature-card reveal-on-scroll">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <h4>Near Palani Temple</h4>
+                            <p>Located on Idumban Kovil Road, offering immediate proximity to major pilgrimage spots and the hill path.</p>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="feature-card reveal-on-scroll">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <h4>Sparkling Clean Rooms</h4>
+                            <p>Rigorous hygiene guidelines, fresh premium linens, sanitized floors, and spotless bathrooms.</p>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="feature-card reveal-on-scroll">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="10" rx="2"/>
+                                    <path d="M12 2v9"/>
+                                    <path d="M8 5h8"/>
+                                </svg>
+                            </div>
+                            <h4>Safe Private Parking</h4>
+                            <p>Spacious, secure private parking space on-site, perfectly suited for family cars and tourist buses.</p>
+                        </div>
+                        
+                        <!-- Card 4 -->
+                        <div class="feature-card reveal-on-scroll">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6M2 12h20"/>
+                                </svg>
+                            </div>
+                            <h4>24/7 Hot Water & Power</h4>
+                            <p>Equipped with geysers in all bathrooms and round-the-clock power backup generators.</p>
+                        </div>
+                        
+                        <!-- Card 5 -->
+                        <div class="feature-card reveal-on-scroll">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <h4>Family Pilgrim Friendly</h4>
+                            <p>Peaceful, safe, and homely atmosphere designed to accommodate pilgrimage families and tour groups.</p>
+                        </div>
+                        
+                        <!-- Card 6 -->
+                        <div class="feature-card reveal-on-scroll">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <h4>24/7 Desk Assistance</h4>
+                            <p>Responsive reception team to assist with room service, local guidance, and taxi arrangements.</p>
+                        </div>
                     </div>
-                    <div class="review-source">Google Review</div>
                 </div>
-                <p class="review-text">"Had a wonderful stay at this hotel! 🌟 The hospitality was exceptional — staff
-                    were warm, courteous, and always ready to help. The cleanliness was top-notch, with spotless rooms
-                    and well-maintained common areas. 🧹✨ Highly recommended..."</p>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">VINOTH KANNAN</div>
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <div class="review-source">Google Review</div>
-                </div>
-                <p class="review-text">"Rooms are very neat and clean.... Excellent service..... 👌👌👌"</p>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">Kavin K V</div>
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <div class="review-source">Google Review</div>
-                </div>
-                <p class="review-text">"good for family and good service and saftey and parking facilities are nicee"
-                </p>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-info">
-                    <div class="reviewer-name">R Raja</div>
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                </div>
-                <p class="review-text">"Staffs are really kind and rooms are so good and neat...really good property to
-                    stay"</p>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-info">
-                    <div class="reviewer-name">Riyas Mohamed</div>
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                </div>
-                <p class="review-text">"Best stay at Palani. Very clean and good service."</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>Sri Padmavati Pleasants</h3>
-                    <p>Experience luxury and comfort at our premium lodge. We ensure every guest has a memorable stay
-                        with us.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#rooms">Rooms</a>
-                    <a href="#features">Amenities</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>📍 Sri Padmavati Pleasants,
-                        <br>92/1A2,Idumban Kovil Road,
-                        <br>Palani - 624601
-                    </p>
-                    <p>📞 63692-16621</p>
-                    <p>✉️ info@sripadmavatipleasants.com</p>
+    <!-- 5. Amenities Section -->
+    <section class="section amenities" id="amenities">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">EXCEPTIONAL HOSPITALITY</span>
+                <h2 class="section-title">Lodge Facilities & Room Amenities</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sri Padmavati Pleasants. All rights reserved. |
-                    <a href="https://spp-admin-alpha.vercel.app/" target="_blank" class="admin-link">
+            
+            <div class="amenities-grid">
+                <!-- Amenity 1 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <line x1="9" y1="3" x2="9" y2="21"/>
+                                <line x1="15" y1="3" x2="15" y2="21"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                <line x1="3" y1="15" x2="21" y2="15"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Split A/C Cooling</h3>
+                    <p>High-end split air conditioning systems in Deluxe A/C rooms to escape the outside heat.</p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>LED Smart TVs</h3>
+                    <p>Wall-mounted Smart TVs in all rooms featuring international satellite entertainment and news channels.</p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                                <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                                <path d="M8.58 16.14a7 7 0 0 1 6.84 0"/>
+                                <circle cx="12" cy="20" r="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Free High-Speed WiFi</h3>
+                    <p>Abundant high-speed wireless internet connection spanning across all rooms and common areas.</p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Hot Water Geysers</h3>
+                    <p>Dedicated geysers fitted in every room bathroom, assuring hot water anytime of the day.</p>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>24/7 Security CCTV</h3>
+                    <p>Secured perimeter monitored constantly with CCTV surveillance cameras and active wardens.</p>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Room Service</h3>
+                    <p>Prompt standard room service ensuring towels, fresh water, and linens are just a bell-call away.</p>
+                </div>
+
+                <!-- Amenity 7 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Safe Private Parking</h3>
+                    <p>Free spacious parking area protected by boundary walls, safe for family SUVs and pilgrim buses.</p>
+                </div>
+
+                <!-- Amenity 8 -->
+                <div class="amenity-card reveal-on-scroll">
+                    <div class="amenity-visual">
+                        <div class="amenity-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M12 8v8"/>
+                                <path d="M8 12h8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Power Generator Backup</h3>
+                    <p>100% automatic power backup generators, ensuring lights, fans, and geysers function during outages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Rooms Section -->
+    <section class="section floor-plans" id="rooms">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">LUXURY ACCOMMODATIONS</span>
+                <h2 class="section-title">Our Premium Rooms</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <!-- Room Layout Grid with 2 Columns -->
+            <div class="rooms-grid">
+                <!-- Deluxe Room A/C -->
+                <div class="plan-card reveal-on-scroll">
+                    <div class="plan-image-wrapper">
+                        <img src="assets/ROOM2.webp" alt="Deluxe Room A/C Accommodation" class="plan-img">
+                        <div class="plan-zoom-overlay">
+                            <span class="zoom-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg> View Room Photo
+                            </span>
+                        </div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="plan-badge">Most Popular</div>
+                        <h3>Deluxe Room A/C</h3>
+                        <p class="plan-meta">Occupancy: <span>2 Adults + 1 Kid</span> | Price: <span>₹3,000 / Night</span></p>
+                        <p class="plan-desc">Spacious and elegantly furnished room with modern split air conditioning, King bed, attached bathroom with geyser, and LED Smart TV.</p>
+                        <div class="plan-actions">
+                            <a href="#contact" class="btn btn-outline-gold select-unit-btn" data-unit="Deluxe Room A/C">Book This Room</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deluxe Room Non A/C -->
+                <div class="plan-card reveal-on-scroll">
+                    <div class="plan-image-wrapper">
+                        <img src="assets/ROOM4.webp" alt="Deluxe Room Non A/C Accommodation" class="plan-img">
+                        <div class="plan-zoom-overlay">
+                            <span class="zoom-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg> View Room Photo
+                            </span>
+                        </div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="plan-badge">Budget Cozy</div>
+                        <h3>Deluxe Room Non A/C</h3>
+                        <p class="plan-meta">Occupancy: <span>2 Adults + 1 Kid</span> | Price: <span>₹2,000 / Night</span></p>
+                        <p class="plan-desc">Comfortable and highly sanitised room featuring standard ceiling fan ventilation, King bed, attached bathroom with hot geyser, and LED Smart TV.</p>
+                        <div class="plan-actions">
+                            <a href="#contact" class="btn btn-outline-gold select-unit-btn" data-unit="Deluxe Room Non A/C">Book This Room</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">PHOTO TOUR</span>
+                <h2 class="section-title">Lodge Gallery</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <!-- Filter Tabs -->
+            <div class="gallery-filters reveal-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="rooms">Rooms</button>
+                <button class="filter-btn" data-filter="bathrooms">Bathrooms</button>
+                <button class="filter-btn" data-filter="corridors">Corridors</button>
+                <button class="filter-btn" data-filter="surroundings">Property & View</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Item 1 (MALAI.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="surroundings">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/MALAI.webp" alt="Scenic Mountain View of Palani Hills" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">View From Property</span>
+                            <h4>Palani Hill View</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 (ROOM1.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="rooms">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/ROOM1.webp" alt="Elegantly Clean Room Layout" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Rooms</span>
+                            <h4>Luxury Room Layout</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 (PARKING1.png) -->
+                <div class="gallery-item reveal-on-scroll" data-category="surroundings">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/PARKING1.png" alt="Spacious Gated Car Parking Area" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Property Exterior</span>
+                            <h4>Safe Private Parking</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 (ROOM2.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="rooms">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/ROOM2.webp" alt="Sanitized Deluxe AC Bed Space" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Rooms</span>
+                            <h4>Deluxe AC Room</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 (CORRIDOR1.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="corridors">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/CORRIDOR1.webp" alt="Clean and Wide Lodge Walkways" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Corridors</span>
+                            <h4>Well-Lit Corridor</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 (BATHROOM1.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="bathrooms">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/BATHROOM1.webp" alt="Spotless Sanitized Bathroom with Geyser" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Bathrooms</span>
+                            <h4>Modern Bath Fittings</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 (ROOM3.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="rooms">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/ROOM3.webp" alt="Cozy Furnished Room Ambiance" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Rooms</span>
+                            <h4>Cozy Sitting Area</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 (BATHROOM0.webp) -->
+                <div class="gallery-item reveal-on-scroll" data-category="bathrooms">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/BATHROOM0.webp" alt="Sanitized Bath tiles and fixtures" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Bathrooms</span>
+                            <h4>Spotless Bathroom</h4>
+                            <span class="gallery-zoom-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-arrow lightbox-prev" aria-label="Previous image">&#10094;</span>
+        <span class="lightbox-arrow lightbox-next" aria-label="Next image">&#10095;</span>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery view">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- 8. Location Section -->
+    <section class="section location-advantage" id="location">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">TEMPLE PROXIMITY</span>
+                <h2 class="section-title">Location & Proximity</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <div class="location-grid">
+                <div class="map-container reveal-on-scroll">
+                    <!-- Dynamic Google Map Embed -->
+                    <iframe src="https://maps.google.com/maps?q=Sri%20Padmavati%20Pleasants,%20Idumban%20Kovil%20Road,%20Palani&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+                    <div class="map-actions-row">
+                        <a href="https://maps.app.goo.gl/jpgcTg5xoX3SN8fy5" target="_blank" class="btn btn-outline-gold w-100 mt-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="landmarks-container">
+                    <h3 class="location-heading reveal-on-scroll">Strategically Placed For Pilgrims</h3>
+                    <p class="location-desc reveal-on-scroll">Located right on Idumban Kovil Road, Sri Padmavati Pleasants provides quick access to the foothills of the main hill temple (Adivaram) and surrounding spiritual shrines.</p>
+                    
+                    <div class="landmark-cards-stack">
+                        <!-- Card 1 -->
+                        <div class="landmark-card reveal-on-scroll">
+                            <div class="landmark-icon">🛕</div>
+                            <div class="landmark-info">
+                                <h4>Palani Murugan Hill Temple (Adivaram)</h4>
+                                <p>Foothills access, ropecar and winch station</p>
+                            </div>
+                            <div class="landmark-distance">5 Min</div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="landmark-card reveal-on-scroll">
+                            <div class="landmark-icon">⛰️</div>
+                            <div class="landmark-info">
+                                <h4>Idumban Hill Temple</h4>
+                                <p>Scenic hilltop temple located right nearby</p>
+                            </div>
+                            <div class="landmark-distance">2 Min</div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="landmark-card reveal-on-scroll">
+                            <div class="landmark-icon">🚄</div>
+                            <div class="landmark-info">
+                                <h4>Palani Railway Station</h4>
+                                <p>Connecting trains to Madurai, Coimbatore, and Chennai</p>
+                            </div>
+                            <div class="landmark-distance">7 Min</div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="landmark-card reveal-on-scroll">
+                            <div class="landmark-icon">🚌</div>
+                            <div class="landmark-info">
+                                <h4>Palani Central Bus Stand</h4>
+                                <p>Main transport terminal with continuous shuttle buses</p>
+                            </div>
+                            <div class="landmark-distance">8 Min</div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="landmark-card reveal-on-scroll">
+                            <div class="landmark-icon">🛣️</div>
+                            <div class="landmark-info">
+                                <h4>Dindigul-Palani Highway</h4>
+                                <p>Smooth state highway access for fast weekend drives</p>
+                            </div>
+                            <div class="landmark-distance">3 Min</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">GUEST REVIEWS</span>
+                <h2 class="section-title">Verified Google Reviews</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <div class="testimonials-carousel-wrapper reveal-on-scroll">
+                <div class="testimonials-carousel" id="testimonialCarousel">
+                    
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-text">"Really amazing hospitality, friendly staff and clean rooms. Would highly recommend for families visiting Palani. The location is very peaceful and safe."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-text">SM</div>
+                            <div class="author-details">
+                                <h4 class="author-name">S Moovendhan</h4>
+                                <p class="author-role">Verified Google Local Guide</p>
+                                <div class="rating-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-text">"Had a wonderful stay at this hotel! The hospitality was exceptional — staff was extremely polite and helpful. Rooms were neat, clean, and well-maintained."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-text">SK</div>
+                            <div class="author-details">
+                                <h4 class="author-name">shyam kumar</h4>
+                                <p class="author-role">Verified Pilgrim Traveler</p>
+                                <div class="rating-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-text">"Rooms are very neat and clean.... Excellent service..... 👌👌👌 Highly satisfied with the bathroom sanitization and hot water facility."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-text">VK</div>
+                            <div class="author-details">
+                                <h4 class="author-name">VINOTH KANNAN</h4>
+                                <p class="author-role">Family Traveler</p>
+                                <div class="rating-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-text">"Good for family and good service and safety. The parking facilities are nice and very spacious. Will definitely stay here again on our next temple visit."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-text">KK</div>
+                            <div class="author-details">
+                                <h4 class="author-name">Kavin K V</h4>
+                                <p class="author-role">Verified Google Reviewer</p>
+                                <div class="rating-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Generated via JS -->
+                </div>
+                <div class="carousel-arrows">
+                    <button class="carousel-btn prev-btn" id="carouselPrevBtn" aria-label="Previous review">&#10094;</button>
+                    <button class="carousel-btn next-btn" id="carouselNextBtn" aria-label="Next review">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ Accordion Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">COMMON INQUIRIES</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-floWe offer a flexible check-in policy with a standard 24-hour check-out system. You can coordinate your check-in time during booking to make your pilgrimage schedule as comfortable as possible-accordion-wrapper reveal-on-scroll">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What are the check-in and check-out timings?</span>
+                        <span class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a flexible check-in policy with a standard 24-hour check-out system. You can coordinate your check-in time during booking to make your pilgrimage schedule as comfortable as possible.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How close is the lodge to the main Palani temple?</span>
+                        <span class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sri Padmavati Pleasants is situated on Idumban Kovil Road. The main hill temple winch/ropecar station (Adivaram) is just 5 minutes drive from our lodge, making it highly convenient for early morning or late evening darsan visits.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you have on-site car and bus parking facilities?</span>
+                        <span class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we have a safe and spacious private parking compound on-site. It is fully gated, monitored, and free of charge for all our lodging guests. There is plenty of space for multiple family SUVs as well as pilgrim vans and tour buses.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are extra beds/mattresses available for larger families?</span>
+                        <span class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we can arrange extra clean mattresses and beddings upon request for larger families sharing a room. A nominal fee will apply. Please specify this requirement during your booking inquiry or inform the front desk.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the easiest way to book a room?</span>
+                        <span class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can instantly check availability and book a room by completing our Booking Consultation form on this website, calling our front desk directly at 63692-16621, or tapping the floating WhatsApp chat widget to converse directly with our booking agent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Booking Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">SECURE YOUR STAY</span>
+                <h2 class="section-title">Book a Room & Enquire</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Form Column -->
+                <div class="contact-form-wrapper reveal-on-scroll">
+                    <h3 class="contact-form-title">Request Availability & Rates</h3>
+                    <p class="contact-form-desc">Provide your travel dates and requirements below. Our desk agent will contact you immediately to confirm room availability and direct reservation details.</p>
+                    
+                    <form class="project-inquiry-form" id="projectInquiryForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formName">Full Name *</label>
+                                <input type="text" id="formName" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="formPhone">Phone Number *</label>
+                                <input type="tel" id="formPhone" name="phone" required placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formCheckIn">Check-In Date *</label>
+                                <input type="date" id="formCheckIn" name="checkin" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formCheckOut">Check-Out Date *</label>
+                                <input type="date" id="formCheckOut" name="checkout" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formInterest">Room Category</label>
+                                <select id="formInterest" name="interest">
+                                    <option value="Deluxe Room A/C">Deluxe Room A/C (₹3,000 / Night)</option>
+                                    <option value="Deluxe Room Non A/C">Deluxe Room Non A/C (₹2,000 / Night)</option>
+                                    <option value="General Enquiry">General Lodging Enquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGuests">Total Guests</label>
+                                <select id="formGuests" name="guests">
+                                    <option value="1 Adult">1 Adult</option>
+                                    <option value="2 Adults">2 Adults</option>
+                                    <option value="3 Adults">3 Adults</option>
+                                    <option value="Family Group (4+)">Family Group (4+ Guests)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="formMessage">Special Requests / Requirements</label>
+                            <textarea id="formMessage" name="message" rows="3" placeholder="Let us know if you need extra mattresses, early check-in assistance, or travel directions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 text-center justify-center">
+                            Submit Booking Query
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info Card Column -->
+                <div class="contact-info-wrapper reveal-on-scroll">
+                    <div class="info-card-premium">
+                        <h3 class="info-card-title">Front Desk & Reception</h3>
+                        <div class="info-divider-gold"></div>
+                        
+                        <ul class="info-list">
+                            <!-- Location -->
+                            <li>
+                                <div class="info-icon-circle">📍</div>
+                                <div class="info-text-block">
+                                    <span class="info-lbl">Lodge Address</span>
+                                    <p class="info-val">Sri Padmavati Pleasants,<br>92/1A2, Idumban Kovil Road,<br>Palani - 624601, Tamil Nadu</p>
+                                </div>
+                            </li>
+
+                            <!-- Phone -->
+                            <li>
+                                <div class="info-icon-circle">📞</div>
+                                <div class="info-text-block">
+                                    <span class="info-lbl">Front Desk Mobile</span>
+                                    <p class="info-val"><a href="tel:+916369216621">+91 63692 16621</a></p>
+                                </div>
+                            </li>
+
+                            <!-- Email -->
+                            <li>
+                                <div class="info-icon-circle">✉️</div>
+                                <div class="info-text-block">
+                                    <span class="info-lbl">Official Email</span>
+                                    <p class="info-val"><a href="mailto:info@sripadmavatipleasants.com">info@sripadmavatipleasants.com</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="quick-call-cta">
+                            <h4>Want Instant Confirmation?</h4>
+                            <p>Connect directly with our booking coordinator on WhatsApp for immediate availability and customized family package rates.</p>
+                            <a href="https://wa.me/916369216621?text=Hi!%20I'm%20inquiring%20about%20room%20availability%20at%20Sri%20Padmavati%20Pleasants.%20Please%20send%20details." target="_blank" class="btn btn-whatsapp-large">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.292-4.148c1.618.96 3.197 1.484 4.88 1.485 5.542.003 10.051-4.478 10.054-10.021.002-2.686-1.043-5.207-2.946-7.111C16.434 2.3 13.92 1.253 11.233 1.253 5.69 1.253 1.18 5.732 1.176 11.275c-.001 1.8.488 3.563 1.417 5.123L1.696 21.36l5.053-1.32c-.17-.1-.17-.1.4-.2zM18.13 15.666c-.33-.165-1.951-.964-2.252-1.074-.3-.109-.518-.165-.735.165-.218.33-.842 1.073-1.03 1.293-.19.219-.379.247-.708.082-.33-.165-1.393-.513-2.653-1.638-.98-.874-1.641-1.953-1.833-2.282-.19-.33-.02-.508.145-.671.148-.147.33-.384.495-.577.165-.192.219-.33.329-.548.11-.219.055-.411-.028-.576-.082-.165-.735-1.77-.999-2.428-.27-.66-.54-.57-.735-.57h-.628c-.219 0-.576.082-.876.411-.3.33-1.15 1.124-1.15 2.742 0 1.618 1.177 3.181 1.338 3.399.165.219 2.316 3.538 5.61 4.96.784.339 1.397.541 1.873.693.79.25 1.5.214 2.065.13.63-.093 1.952-.797 2.228-1.567.275-.769.275-1.428.193-1.567-.083-.14-.302-.222-.633-.387z"/>
+                                </svg>
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer class="footer">
+        <div class="container footer-top-grid">
+            <!-- Col 1: About -->
+            <div class="footer-col footer-col-about">
+                <a href="#home" class="footer-logo">
+                    <img src="assets/SPP PIC.webp" alt="SPP Logo" class="footer-logo-img">
+                    <div class="footer-logo-text">
+                        <span class="footer-logo-title">SRI PADMAVATI</span>
+                        <span class="footer-logo-subtitle">PLEASANTS</span>
+                    </div>
+                </a>
+                <p class="footer-desc">Providing premium lodge accommodations nested close to the spiritual foothills of Palani. Committed to extreme cleanliness, family-friendly security, and high-quality guest comfort.</p>
+                <div class="footer-badges">
+                    <span class="badge-dtcp">FAMILY SAFE</span>
+                    <span class="badge-gated">24/7 SUPPORT</span>
+                </div>
+            </div>
+            
+            <!-- Col 2: Navigation Links -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Quick Navigation</h3>
+                <div class="footer-col-divider"></div>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Lodge</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#gallery">Showcase Gallery</a></li>
+                    <li><a href="#location">Location Advantage</a></li>
+                    <li><a href="#testimonials">Guest Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 3: Contact Info -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Lodge Front Office</h3>
+                <div class="footer-col-divider"></div>
+                <ul class="footer-contact-details">
+                    <li>
+                        <span class="footer-contact-icon">📍</span>
+                        <span>Sri Padmavati Pleasants, 92/1A2, Idumban Kovil Road, Palani - 624601</span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon">📞</span>
+                        <a href="tel:+916369216621">+91 63692 16621</a>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon">✉️</span>
+                        <a href="mailto:info@sripadmavatipleasants.com">info@sripadmavatipleasants.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p class="copyright">&copy; 2026 Sri Padmavati Pleasants. All rights reserved.</p>
+                <div class="footer-meta-links">
+                    <a href="https://spp-admin-alpha.vercel.app/" target="_blank" class="admin-portal-link">
+                        <span class="lock-icon">🔑</span> Lodging Administrator
+                    </a>
+                    <span class="meta-separator">|</span>
+                    <span class="developer-credit">Developed by <strong><a href="https://codecrafters-pi.vercel.app/" target="_blank">CodeCrafters</a></strong></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 13. Floating Action Elements -->
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    
+    <!-- Floating WhatsApp Pulse Button -->
+    <a href="https://wa.me/916369216621?text=Hello!%20I'm%20inquiring%20about%20booking%20rooms%20at%20Sri%20Padmavati%20Pleasants.%20Please%20share%20room%20availability%20details." class="floating-whatsapp-btn" target="_blank" aria-label="Book on WhatsApp">
+        <svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.292-4.148c1.618.96 3.197 1.484 4.88 1.485 5.542.003 10.051-4.478 10.054-10.021.002-2.686-1.043-5.207-2.946-7.111C16.434 2.3 13.92 1.253 11.233 1.253 5.69 1.253 1.18 5.732 1.176 11.275c-.001 1.8.488 3.563 1.417 5.123L1.696 21.36l5.053-1.32c-.17-.1-.17-.1.4-.2zM18.13 15.666c-.33-.165-1.951-.964-2.252-1.074-.3-.109-.518-.165-.735.165-.218.33-.842 1.073-1.03 1.293-.19.219-.379.247-.708.082-.33-.165-1.393-.513-2.653-1.638-.98-.874-1.641-1.953-1.833-2.282-.19-.33-.02-.508.145-.671.148-.147.33-.384.495-.577.165-.192.219-.33.329-.548.11-.219.055-.411-.028-.576-.082-.165-.735-1.77-.999-2.428-.27-.66-.54-.57-.735-.57h-.628c-.219 0-.576.082-.876.411-.3.33-1.15 1.124-1.15 2.742 0 1.618 1.177 3.181 1.338 3.399.165.219 2.316 3.538 5.61 4.96.784.339 1.397.541 1.873.693.79.25 1.5.214 2.065.13.63-.093 1.952-.797 2.228-1.567.275-.769.275-1.428.193-1.567-.083-.14-.302-.222-.633-.387z"/>
+        </svg>
+    </a>
+
+    <!-- Lead Capture Popup Modal (Triggers after 10s or click) -->
+    <div id="leadModal" class="lead-modal" aria-hidden="true" role="dialog">
+        <div class="lead-modal-backdrop"></div>
+        <div class="lead-modal-container">
+            <button class="lead-modal-close" aria-label="Close modal">&times;</button>
+            <div class="lead-modal-content">
+                <div class="lead-modal-left" style="background-image: linear-gradient(to bottom, rgba(10, 22, 40, 0.7), rgba(10, 22, 40, 0.95)), url('assets/MALAI.webp');">
+                    <div class="lead-modal-brand">
+                        <img src="assets/SPP PIC.webp" alt="SPP Logo" class="modal-brand-logo">
+                        <span>Sri Padmavati Pleasants</span>
+                    </div>
+                    <div class="lead-modal-badge">Exclusive Rates</div>
+                    <h3>Reserve Your Temple Stay</h3>
+                    <p>Book directly with us to secure the best rates, flexible check-in adjustments, and free spacious private vehicle parking.</p>
+                    <ul class="modal-benefits-list">
+                        <li><span>✓</span> Direct Booking Discount</li>
+                        <li><span>✓</span> Flexible Check-in Timings</li>
+                        <li><span>✓</span> Free High-Speed WiFi & Parking</li>
+                    </ul>
+                </div>
+                
+                <div class="lead-modal-right">
+                    <h3 class="modal-right-title">Enquire Room Booking</h3>
+                    <p class="modal-right-desc">Enter your basic details, and our front desk officer will call you back within 15 minutes to confirm booking.</p>
+                    
+                    <form class="modal-callback-form" id="modalCallbackForm">
+                        <div class="form-group">
+                            <label for="modalName">Full Name *</label>
+                            <input type="text" id="modalName" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalPhone">Phone Number *</label>
+                            <input type="tel" id="modalPhone" required placeholder="+91 98765 43210">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalUnit">Select Room Type</label>
+                            <select id="modalUnit">
+                                <option value="Deluxe Room A/C">Deluxe Room A/C</option>
+                                <option value="Deluxe Room Non A/C">Deluxe Room Non A/C</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 text-center mt-3 justify-center">Request Room Availability</button>
+                    </form>
+                    <div class="modal-footer-phone">
+                        Or Call Us Directly: <a href="tel:+916369216621">+91 63692 16621</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+ef="https://spp-admin-alpha.vercel.app/" target="_blank" class="admin-link">
                         <span class="admin-icon">🔐</span> Admin Portal
                     </a> |
                     Developed by <strong><a href="https://codecrafters-pi.vercel.app/" target="_blank"
@@ -566,8 +1145,13 @@
             </div>
         </div>
     </footer>
+    </div>
 
-    <script defer src="script.min.js"></script>
+    <footer class="minimal-footer">
+        <p>&copy; 2025 Sri Padmavati Pleasants. All rights reserved. | Developed by CodeCrafters</p>
+    </footer>
+
+<script defer src="script.min.js"></script>
 </body>
 
 </html>
