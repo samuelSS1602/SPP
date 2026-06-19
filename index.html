@@ -286,6 +286,131 @@
         </div>
     </section>
 
+    <!-- 5. Booking Section (Moved Up) -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <span class="section-subtitle-top">SECURE YOUR STAY</span>
+                <h2 class="section-title">Book a Room & Enquire</h2>
+                <div class="section-divider">
+                    <span class="div-line"></span>
+                    <span class="div-flower">♦</span>
+                    <span class="div-line"></span>
+                </div>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Form Column -->
+                <div class="contact-form-wrapper reveal-on-scroll">
+                    <h3 class="contact-form-title">Request Availability & Rates</h3>
+                    <p class="contact-form-desc">Provide your travel dates and requirements below. Our desk agent will contact you immediately to confirm room availability and direct reservation details.</p>
+                    
+                    <form class="project-inquiry-form" id="projectInquiryForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formName">Full Name *</label>
+                                <input type="text" id="formName" name="name" required placeholder="Eg:Rajan">
+                            </div>
+                            <div class="form-group">
+                                <label for="formPhone">Phone Number *</label>
+                                <input type="tel" id="formPhone" name="phone" required placeholder="Eg:98765 43210">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formCheckIn">Check-In Date *</label>
+                                <input type="date" id="formCheckIn" name="checkin" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formCheckOut">Check-Out Date *</label>
+                                <input type="date" id="formCheckOut" name="checkout" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formInterest">Room Category</label>
+                                <select id="formInterest" name="interest">
+                                    <option value="Deluxe Room A/C">Deluxe Room A/C (₹3,000 / Night)</option>
+                                    <option value="Deluxe Room Non A/C">Deluxe Room Non A/C (₹2,000 / Night)</option>
+                                    <option value="General Enquiry">General Lodging Enquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGuests">Total Guests</label>
+                                <select id="formGuests" name="guests">
+                                    <option value="1 Adult">1 Adult</option>
+                                    <option value="2 Adults">2 Adults</option>
+                                    <option value="3 Adults">3 Adults</option>
+                                    <option value="Family Group (4+)">Family Group (4+ Guests)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="formMessage">Special Requests / Requirements</label>
+                            <textarea id="formMessage" name="message" rows="3" placeholder="Let us know if you need extra mattresses, early check-in assistance, or travel directions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 text-center justify-center">
+                            Submit Booking Query
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info Card Column -->
+                <div class="contact-info-wrapper reveal-on-scroll">
+                    <div class="info-card-premium">
+                        <h3 class="info-card-title">Front Desk & Reception</h3>
+                        <div class="info-divider-gold"></div>
+                        
+                        <ul class="info-list">
+                            <!-- Location -->
+                            <li>
+                                <div class="info-icon-circle">📍</div>
+                                <div class="info-text-block">
+                                    <span class="info-lbl">Lodge Address</span>
+                                    <p class="info-val">Sri Padmavati Pleasants,<br>92/1A2, Idumban Kovil Road,<br>Palani - 624601, Tamil Nadu</p>
+                                </div>
+                            </li>
+
+                            <!-- Phone -->
+                            <li>
+                                <div class="info-icon-circle">📞</div>
+                                <div class="info-text-block">
+                                    <span class="info-lbl">Front Desk Mobile</span>
+                                    <p class="info-val"><a href="tel:+916369216621">+91 63692 16621</a></p>
+                                </div>
+                            </li>
+
+                            <!-- Email -->
+                            <li>
+                                <div class="info-icon-circle">✉️</div>
+                                <div class="info-text-block">
+                                    <span class="info-lbl">Official Email</span>
+                                    <p class="info-val"><a href="mailto:info@sripadmavatipleasants.com">info@sripadmavatipleasants.com</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="quick-call-cta">
+                            <h4>Want Instant Confirmation?</h4>
+                            <p>Connect directly with our booking coordinator on WhatsApp for immediate availability and customized family package rates.</p>
+                            <a href="https://wa.me/916369216621?text=Hi!%20I'm%20inquiring%20about%20room%20availability%20at%20Sri%20Padmavati%20Pleasants.%20Please%20send%20details." target="_blank" class="btn btn-whatsapp-large">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.292-4.148c1.618.96 3.197 1.484 4.88 1.485 5.542.003 10.051-4.478 10.054-10.021.002-2.686-1.043-5.207-2.946-7.111C16.434 2.3 13.92 1.253 11.233 1.253 5.69 1.253 1.18 5.732 1.176 11.275c-.001 1.8.488 3.563 1.417 5.123L1.696 21.36l5.053-1.32c-.17-.1-.17-.1.4-.2zM18.13 15.666c-.33-.165-1.951-.964-2.252-1.074-.3-.109-.518-.165-.735.165-.218.33-.842 1.073-1.03 1.293-.19.219-.379.247-.708.082-.33-.165-1.393-.513-2.653-1.638-.98-.874-1.641-1.953-1.833-2.282-.19-.33-.02-.508.145-.671.148-.147.33-.384.495-.577.165-.192.219-.33.329-.548.11-.219.055-.411-.028-.576-.082-.165-.735-1.77-.999-2.428-.27-.66-.54-.57-.735-.57h-.628c-.219 0-.576.082-.876.411-.3.33-1.15 1.124-1.15 2.742 0 1.618 1.177 3.181 1.338 3.399.165.219 2.316 3.538 5.61 4.96.784.339 1.397.541 1.873.693.79.25 1.5.214 2.065.13.63-.093 1.952-.797 2.228-1.567.275-.769.275-1.428.193-1.567-.083-.14-.302-.222-.633-.387z"/>
+                                </svg>
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- 5. Amenities Section -->
     <section class="section amenities" id="amenities">
         <div class="container">
@@ -418,6 +543,31 @@
                     <p>100% automatic power backup generators, ensuring lights, fans, and geysers function during outages.</p>
                 </div>
             </div>
+
+            <!-- No Lift Notice Banner -->
+            <div class="no-lift-notice reveal-on-scroll" id="noLiftNotice">
+                <div class="no-lift-notice-inner">
+                    <div class="no-lift-icon-wrap">
+                        <svg class="no-lift-stairs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 5L17 5L17 10L12 10L12 15L7 15L7 20L2 20"/>
+                            <circle cx="19" cy="3" r="1.5"/>
+                            <path d="M19 5v4l-2 2"/>
+                            <path d="M19 7h2"/>
+                        </svg>
+                    </div>
+                    <div class="no-lift-content">
+                        <h4 class="no-lift-title">
+                            <span class="no-lift-badge">Good to Know</span>
+                            Staircase Access Only &mdash; No Lift Available
+                        </h4>
+                        <p class="no-lift-text">Our lodge does not have a lift/elevator facility. All floors are accessible via well-maintained, well-lit staircases. Our friendly staff will happily assist you with luggage upon request.</p>
+                    </div>
+                    <div class="no-lift-expand-indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1045,133 +1195,23 @@
                         <p>You can instantly check availability and book a room by completing our Booking Consultation form on this website, calling our front desk directly at 63692-16621, or tapping the floating WhatsApp chat widget to converse directly with our booking agent.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 12. Booking Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-header reveal-on-scroll">
-                <span class="section-subtitle-top">SECURE YOUR STAY</span>
-                <h2 class="section-title">Book a Room & Enquire</h2>
-                <div class="section-divider">
-                    <span class="div-line"></span>
-                    <span class="div-flower">♦</span>
-                    <span class="div-line"></span>
-                </div>
-            </div>
-            
-            <div class="contact-grid">
-                <!-- Form Column -->
-                <div class="contact-form-wrapper reveal-on-scroll">
-                    <h3 class="contact-form-title">Request Availability & Rates</h3>
-                    <p class="contact-form-desc">Provide your travel dates and requirements below. Our desk agent will contact you immediately to confirm room availability and direct reservation details.</p>
-                    
-                    <form class="project-inquiry-form" id="projectInquiryForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="formName">Full Name *</label>
-                                <input type="text" id="formName" name="name" required placeholder="Eg:Rajan">
-                            </div>
-                            <div class="form-group">
-                                <label for="formPhone">Phone Number *</label>
-                                <input type="tel" id="formPhone" name="phone" required placeholder="Eg:98765 43210">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="formCheckIn">Check-In Date *</label>
-                                <input type="date" id="formCheckIn" name="checkin" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formCheckOut">Check-Out Date *</label>
-                                <input type="date" id="formCheckOut" name="checkout" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="formInterest">Room Category</label>
-                                <select id="formInterest" name="interest">
-                                    <option value="Deluxe Room A/C">Deluxe Room A/C (₹3,000 / Night)</option>
-                                    <option value="Deluxe Room Non A/C">Deluxe Room Non A/C (₹2,000 / Night)</option>
-                                    <option value="General Enquiry">General Lodging Enquiry</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGuests">Total Guests</label>
-                                <select id="formGuests" name="guests">
-                                    <option value="1 Adult">1 Adult</option>
-                                    <option value="2 Adults">2 Adults</option>
-                                    <option value="3 Adults">3 Adults</option>
-                                    <option value="Family Group (4+)">Family Group (4+ Guests)</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="formMessage">Special Requests / Requirements</label>
-                            <textarea id="formMessage" name="message" rows="3" placeholder="Let us know if you need extra mattresses, early check-in assistance, or travel directions..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary w-100 text-center justify-center">
-                            Submit Booking Query
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Contact Info Card Column -->
-                <div class="contact-info-wrapper reveal-on-scroll">
-                    <div class="info-card-premium">
-                        <h3 class="info-card-title">Front Desk & Reception</h3>
-                        <div class="info-divider-gold"></div>
-                        
-                        <ul class="info-list">
-                            <!-- Location -->
-                            <li>
-                                <div class="info-icon-circle">📍</div>
-                                <div class="info-text-block">
-                                    <span class="info-lbl">Lodge Address</span>
-                                    <p class="info-val">Sri Padmavati Pleasants,<br>92/1A2, Idumban Kovil Road,<br>Palani - 624601, Tamil Nadu</p>
-                                </div>
-                            </li>
-
-                            <!-- Phone -->
-                            <li>
-                                <div class="info-icon-circle">📞</div>
-                                <div class="info-text-block">
-                                    <span class="info-lbl">Front Desk Mobile</span>
-                                    <p class="info-val"><a href="tel:+916369216621">+91 63692 16621</a></p>
-                                </div>
-                            </li>
-
-                            <!-- Email -->
-                            <li>
-                                <div class="info-icon-circle">✉️</div>
-                                <div class="info-text-block">
-                                    <span class="info-lbl">Official Email</span>
-                                    <p class="info-val"><a href="mailto:info@sripadmavatipleasants.com">info@sripadmavatipleasants.com</a></p>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="quick-call-cta">
-                            <h4>Want Instant Confirmation?</h4>
-                            <p>Connect directly with our booking coordinator on WhatsApp for immediate availability and customized family package rates.</p>
-                            <a href="https://wa.me/916369216621?text=Hi!%20I'm%20inquiring%20about%20room%20availability%20at%20Sri%20Padmavati%20Pleasants.%20Please%20send%20details." target="_blank" class="btn btn-whatsapp-large">
-                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.292-4.148c1.618.96 3.197 1.484 4.88 1.485 5.542.003 10.051-4.478 10.054-10.021.002-2.686-1.043-5.207-2.946-7.111C16.434 2.3 13.92 1.253 11.233 1.253 5.69 1.253 1.18 5.732 1.176 11.275c-.001 1.8.488 3.563 1.417 5.123L1.696 21.36l5.053-1.32c-.17-.1-.17-.1.4-.2zM18.13 15.666c-.33-.165-1.951-.964-2.252-1.074-.3-.109-.518-.165-.735.165-.218.33-.842 1.073-1.03 1.293-.19.219-.379.247-.708.082-.33-.165-1.393-.513-2.653-1.638-.98-.874-1.641-1.953-1.833-2.282-.19-.33-.02-.508.145-.671.148-.147.33-.384.495-.577.165-.192.219-.33.329-.548.11-.219.055-.411-.028-.576-.082-.165-.735-1.77-.999-2.428-.27-.66-.54-.57-.735-.57h-.628c-.219 0-.576.082-.876.411-.3.33-1.15 1.124-1.15 2.742 0 1.618 1.177 3.181 1.338 3.399.165.219 2.316 3.538 5.61 4.96.784.339 1.397.541 1.873.693.79.25 1.5.214 2.065.13.63-.093 1.952-.797 2.228-1.567.275-.769.275-1.428.193-1.567-.083-.14-.302-.222-.633-.387z"/>
-                                </svg>
-                                Chat on WhatsApp
-                            </a>
-                        </div>
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does the lodge have a lift or elevator?</span>
+                        <span class="faq-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, our lodge currently does not have a lift/elevator facility. All floors are accessible through well-maintained, well-lit staircases. However, our staff is always available to assist guests with their luggage. We recommend guests who may have difficulty with stairs to request a ground-floor room when booking.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- 13. Footer -->
     <footer class="footer">

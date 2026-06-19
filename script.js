@@ -596,4 +596,30 @@ document.addEventListener('DOMContentLoaded', () => {
             callbackForm.reset();
         });
     }
+
+    // ==========================================
+    // 10. NO LIFT NOTICE - CLICK TO EXPAND/COLLAPSE
+    // ==========================================
+    const noLiftNotice = document.getElementById('noLiftNotice');
+    if (noLiftNotice) {
+        const noticeInner = noLiftNotice.querySelector('.no-lift-notice-inner');
+        if (noticeInner) {
+            noticeInner.addEventListener('click', () => {
+                noLiftNotice.classList.toggle('expanded');
+            });
+
+            // Auto-expand after a short delay when it scrolls into view
+            const noticeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            noLiftNotice.classList.add('expanded');
+                        }, 800);
+                        noticeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            noticeObserver.observe(noLiftNotice);
+        }
+    }
 });
