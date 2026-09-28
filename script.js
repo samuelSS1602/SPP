@@ -33,17 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (hamburger && navMenu) {
+        const setMenuOpen = (open) => {
+            hamburger.classList.toggle('active', open);
+            navMenu.classList.toggle('active', open);
+            hamburger.setAttribute('aria-expanded', String(open));
+            document.body.classList.toggle('menu-open', open);
+        };
+
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            setMenuOpen(!navMenu.classList.contains('active'));
+        });
+
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setMenuOpen(!navMenu.classList.contains('active'));
+            }
         });
 
         // Close mobile menu when a nav link is clicked
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+            link.addEventListener('click', () => setMenuOpen(false));
         });
     }
 
@@ -55,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleScrollEffects = () => {
         const scrollPos = window.scrollY;
+
+        // Gold reading-progress line under the navbar
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        document.documentElement.style.setProperty('--scroll-progress', maxScroll > 0 ? (scrollPos / maxScroll).toFixed(4) : 0);
 
         // Sticky nav transition
         if (navbar) {
@@ -82,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    window.addEventListener('scroll', handleScrollEffects);
+    window.addEventListener('scroll', handleScrollEffects, { passive: true });
     // Trigger once on load to establish correct states
     handleScrollEffects();
 
@@ -167,18 +181,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             galleryItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                
+
+                // Cancel any pending show/hide from a previous click so rapid
+                // filter switching can't leave items stuck hidden
+                clearTimeout(item._filterTimer);
+
                 // Hide with transition
                 if (filterValue === 'all' || category === filterValue) {
                     item.style.display = 'block';
-                    setTimeout(() => {
+                    item._filterTimer = setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
                     }, 50);
                 } else {
                     item.style.opacity = '0';
                     item.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
+                    item._filterTimer = setTimeout(() => {
                         item.style.display = 'none';
                     }, 400);
                 }
@@ -203,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateActiveGallerySet = () => {
         currentGalleryImages = [];
         galleryItems.forEach(item => {
-            if (item.style.display !== 'none') {
+            if (item.style.display !== 'none' && item.style.opacity !== '0') {
                 const img = item.querySelector('img');
                 const title = item.querySelector('h4');
                 if (img) {
@@ -424,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Map to modal popup form dropdown
-            const modalDropdown = document.getElementById('modalUnit');
+            const modalDropdown = document.getElementById('modalFormInterest');
             if (modalDropdown) {
                 for (let i = 0; i < modalDropdown.options.length; i++) {
                     if (modalDropdown.options[i].value === unitName) {
@@ -479,16 +497,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Auto trigger popup after 10 seconds if not already shown/dismissed in this session
+    // Storage access can throw (private mode, blocked site data), so guard it
     const shownSessionKey = 'spp_lead_modal_shown';
-    if (!localStorage.getItem(shownSessionKey)) {
+    const storageGet = (key) => { try { return localStorage.getItem(key); } catch (err) { return null; } };
+    const storageSet = (key, val) => { try { localStorage.setItem(key, val); } catch (err) { /* ignore */ } };
+
+    if (!storageGet(shownSessionKey)) {
         setTimeout(() => {
-            // Double check that modal isn't already open
-            if (leadModal && !leadModal.classList.contains('show-modal')) {
+            // Don't interrupt if the modal, lightbox or mobile menu is already open
+            const lightboxOpen = lightbox && lightbox.style.display === 'flex';
+            const menuOpen = navMenu && navMenu.classList.contains('active');
+            if (leadModal && !leadModal.classList.contains('show-modal') && !lightboxOpen && !menuOpen) {
                 showModal();
-                localStorage.setItem(shownSessionKey, 'true');
+                storageSet(shownSessionKey, 'true');
             }
         }, 10000); // 10 seconds
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && leadModal && leadModal.classList.contains('show-modal')) closeModal();
+    });
 
     // ==========================================
     // 12. SCROLL TO TOP WIDGET
@@ -502,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 scrollTopBtn.classList.remove('show-btn');
             }
-        });
+        }, { passive: true });
 
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
@@ -516,33 +544,78 @@ document.addEventListener('DOMContentLoaded', () => {
     // 13. FORM INQUIRY SUBMISSIONS (WhatsApp Message Redirection)
     // ==========================================
     
-    // Main Booking Form
-    const contactForm = document.getElementById('projectInquiryForm');
     const waNumber = '916369216621'; // Lodge reception number
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    // Lightweight toast in place of blocking alert() dialogs
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+    let toastTimer;
+
+    const showToast = (msg, type = 'success') => {
+        toast.textContent = msg;
+        toast.className = `toast toast-${type} show`;
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 4500);
+    };
+
+    // Local YYYY-MM-DD (toISOString would shift the date across the UTC boundary)
+    const toDateInputValue = (d) => {
+        const pad = (n) => String(n).padStart(2, '0');
+        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    };
+
+    // Wire a booking form (main section form or popup form) by its field id prefix
+    const setupBookingForm = (formId, prefix, onDone) => {
+        const form = document.getElementById(formId);
+        if (!form) return;
+
+        const field = (name) => document.getElementById(`${prefix}${name}`);
+        const checkInInput = field('CheckIn');
+        const checkOutInput = field('CheckOut');
+
+        // Block past dates and keep check-out after check-in
+        const today = toDateInputValue(new Date());
+        if (checkInInput) checkInInput.min = today;
+        if (checkOutInput) checkOutInput.min = today;
+        if (checkInInput && checkOutInput) {
+            checkInInput.addEventListener('change', () => {
+                if (!checkInInput.value) return;
+                const next = new Date(`${checkInInput.value}T00:00:00`);
+                next.setDate(next.getDate() + 1);
+                checkOutInput.min = toDateInputValue(next);
+                if (checkOutInput.value && checkOutInput.value <= checkInInput.value) {
+                    checkOutInput.value = toDateInputValue(next);
+                }
+            });
+        }
+
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const name = document.getElementById('formName').value.trim();
-            const phone = document.getElementById('formPhone').value.trim();
-            const checkin = document.getElementById('formCheckIn').value;
-            const checkout = document.getElementById('formCheckOut').value;
-            const roomType = document.getElementById('formInterest').value;
-            const guests = document.getElementById('formGuests').value;
-            const message = document.getElementById('formMessage').value.trim();
+
+            const name = field('Name').value.trim();
+            const phone = field('Phone').value.trim();
+            const checkin = checkInInput.value;
+            const checkout = checkOutInput.value;
+            const roomType = field('Interest').value;
+            const guests = field('Guests').value;
+            const message = field('Message').value.trim();
 
             if (!name || !phone || !checkin || !checkout) {
-                alert('Please fill out all required fields.');
+                showToast('Please fill out all required fields.', 'error');
                 return;
             }
 
-            // Simple date range check
-            const checkInDate = new Date(checkin);
-            const checkOutDate = new Date(checkout);
-            
-            if (checkOutDate <= checkInDate) {
-                alert('Check-out date must be after the check-in date.');
+            if (!/^[+\d][\d\s-]{6,}$/.test(phone)) {
+                showToast('Please enter a valid phone number.', 'error');
+                return;
+            }
+
+            // YYYY-MM-DD strings compare correctly as text
+            if (checkout <= checkin) {
+                showToast('Check-out date must be after the check-in date.', 'error');
                 return;
             }
 
@@ -556,46 +629,20 @@ document.addEventListener('DOMContentLoaded', () => {
             text += `*Total Guests:* ${guests}\n`;
             if (message) text += `*Special Requests:* ${message}\n`;
 
-            const encodedText = encodeURIComponent(text);
-            const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 
-            // Provide visual completion alert before redirecting
-            alert(`Thank you, ${name}! We will redirect you to WhatsApp to confirm room availability instantly with our reception desk.`);
-            window.open(waUrl, '_blank');
-            contactForm.reset();
+            // Open synchronously inside the submit gesture so popup blockers allow it
+            const win = window.open(waUrl, '_blank');
+            if (!win) window.location.href = waUrl;
+
+            showToast(`Thank you, ${name}! Opening WhatsApp to confirm your room.`);
+            form.reset();
+            if (onDone) onDone();
         });
-    }
+    };
 
-    // Callback Popup Form
-    const callbackForm = document.getElementById('modalCallbackForm');
-    if (callbackForm) {
-        callbackForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('modalName').value.trim();
-            const phone = document.getElementById('modalPhone').value.trim();
-            const unit = document.getElementById('modalUnit').value;
-
-            if (!name || !phone) {
-                alert('Please enter your Name and Phone number.');
-                return;
-            }
-
-            let text = `*Room Availability Query - Sri Padmavati Pleasants*\n\n`;
-            text += `*Name:* ${name}\n`;
-            text += `*Phone:* ${phone}\n`;
-            text += `*Room Type:* ${unit}\n`;
-            text += `*Request:* Please call me back to confirm room bookings.`;
-
-            const encodedText = encodeURIComponent(text);
-            const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
-
-            alert(`Thank you, ${name}! Your inquiry is registered. Tapping OK will open WhatsApp to instant chat with our reception team.`);
-            closeModal();
-            window.open(waUrl, '_blank');
-            callbackForm.reset();
-        });
-    }
+    setupBookingForm('projectInquiryForm', 'form');
+    setupBookingForm('modalInquiryForm', 'modalForm', closeModal);
 
     // ==========================================
     // 10. NO LIFT NOTICE - CLICK TO EXPAND/COLLAPSE
@@ -609,6 +656,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Auto-expand after a short delay when it scrolls into view
+            if (!('IntersectionObserver' in window)) {
+                noLiftNotice.classList.add('expanded');
+                return;
+            }
             const noticeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {

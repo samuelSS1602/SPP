@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=e    
-    <!-- Primary Meta Tags -->    <title>Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#070f1c">
+
+    <!-- Primary Meta Tags -->
+    <title>Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani</title>
     <meta name="title" content="Sri Padmavati Pleasants | Luxury Lodge & Rooms in Palani">
     <meta name="description" content="Experience premium comfort at Sri Padmavati Pleasants, Palani. Clean luxury Deluxe A/C & Non-A/C rooms, safe private parking, 24/7 hot water, and close proximity to Palani Murugan Temple. Book your stay today.">
     <meta name="keywords" content="Sri Padmavati Pleasants, lodge in Palani, rooms in Palani, budget hotel Palani, luxury rooms Palani, pilgrim stay Palani, hotels near Palani temple">
@@ -31,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
@@ -63,8 +66,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 10.4509748,
-        "longitude": 77.5190977
+        "latitude": 10.445942,
+        "longitude": 77.5254635
       },
       "starRating": {
         "@type": "Rating",
@@ -115,7 +118,7 @@
                     <li class="nav-item"><a href="#contact" class="nav-link nav-btn-cta">Book Room</a></li>
                 </ul>
                 
-                <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -148,23 +151,21 @@
             
             <!-- Quick Stats Badge Row -->
             <div class="hero-stats-row reveal-on-scroll delay-2">
-                <div class="stats-top-row">
-                    <div class="stat-badge">
-                        <span class="stat-badge-num count" data-target="9">0</span><span class="stat-badge-plus">+</span>
-                        <span class="stat-badge-lbl">Premium Rooms</span>
-                    </div>
-                    <div class="stat-badge">
-                        <span class="stat-badge-num count" data-target="700">0</span><span class="stat-badge-plus">+</span>
-                        <span class="stat-badge-lbl">Happy Guests</span>
-                    </div>
+                <div class="stat-badge">
+                    <span class="stat-badge-value"><span class="stat-badge-num count" data-target="9">0</span><span class="stat-badge-plus">+</span></span>
+                    <span class="stat-badge-lbl">Premium Rooms</span>
                 </div>
                 <div class="stat-badge">
-                    <span class="stat-badge-num">100%</span>
-                    <span class="stat-badge-lbl">Safe & Secured</span>
+                    <span class="stat-badge-value"><span class="stat-badge-num count" data-target="700">0</span><span class="stat-badge-plus">+</span></span>
+                    <span class="stat-badge-lbl">Happy Guests</span>
                 </div>
                 <div class="stat-badge">
-                    <span class="stat-badge-num">24/7</span>
-                    <span class="stat-badge-lbl">Support desk</span>
+                    <span class="stat-badge-value"><span class="stat-badge-num">100%</span></span>
+                    <span class="stat-badge-lbl">Safe &amp; Secured</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="stat-badge-value"><span class="stat-badge-num">24/7</span></span>
+                    <span class="stat-badge-lbl">Support Desk</span>
                 </div>
             </div>
         </div>
@@ -912,9 +913,9 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
-        <span class="lightbox-close">&times;</span>
-        <span class="lightbox-arrow lightbox-prev" aria-label="Previous image">&#10094;</span>
-        <span class="lightbox-arrow lightbox-next" aria-label="Next image">&#10095;</span>
+        <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+        <button type="button" class="lightbox-arrow lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <button type="button" class="lightbox-arrow lightbox-next" aria-label="Next image">&#10095;</button>
         <div class="lightbox-content-wrapper">
             <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery view">
             <div id="lightbox-caption" class="lightbox-caption"></div>
@@ -1114,6 +1115,12 @@
                     <button class="carousel-btn prev-btn" id="carouselPrevBtn" aria-label="Previous review">&#10094;</button>
                     <button class="carousel-btn next-btn" id="carouselNextBtn" aria-label="Next review">&#10095;</button>
                 </div>
+            </div>
+
+            <div class="google-reviews-cta reveal-on-scroll">
+                <a href="https://www.google.com/maps/place/SRI+PADMAVATI+PLEASANTS/@10.445942,77.5254635,17z/data=!4m8!3m7!1s0x3ba9df8026a9a8b9:0xae5cccf5a7b5df01!8m2!3d10.445942!4d77.5254635!9m1!1b1" target="_blank" rel="noopener" class="btn btn-primary">
+                    Read All Reviews on Google
+                </a>
             </div>
         </div>
     </section>
