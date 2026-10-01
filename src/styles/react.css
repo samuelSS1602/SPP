@@ -1,0 +1,303 @@
+/* ── REACT / MOTION OVERRIDES ──
+   Motion drives transforms with inline styles every frame. A CSS `transition: all`
+   on the same element would re-ease each frame and make movement feel laggy, so
+   elements animated by Motion only transition their colours and shadows here. */
+
+.feature-card,
+.amenity-card,
+.plan-card,
+.landmark-card,
+.gallery-item,
+.faq-icon,
+.testimonial-slide,
+.no-lift-expand-indicator,
+.floating-call-btn,
+.floating-whatsapp-btn {
+    transition: background-color 0.5s ease, background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+}
+
+/* Hover lifts now come from Motion springs */
+.feature-card:hover,
+.amenity-card:hover,
+.plan-card:hover,
+.landmark-card:hover,
+.amenity-card:active,
+.floating-call-btn:hover,
+.floating-whatsapp-btn:hover {
+    transform: none;
+}
+
+/* Old scroll-progress pseudo-element replaced by .nav-progress */
+.navbar::after {
+    display: none;
+}
+
+.nav-progress {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background: var(--gold-gradient);
+    transform-origin: left;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Buttons rendered as <button> need the link look */
+button.btn {
+    font-family: inherit;
+}
+
+/* ── Hero word-by-word title ── */
+.word-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+}
+
+.word {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* Gradient goes on each word: background-clip:text breaks across transformed children */
+.hero-title .highlight-gold {
+    background: none;
+    color: inherit;
+}
+
+.hero-title .gold-word {
+    font-style: italic;
+    font-weight: 500;
+    padding-right: 0.06em;
+    background: linear-gradient(100deg, #b8914a 0%, #f1dca4 40%, #c9a55c 60%, #e7cd8c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-bg {
+    will-change: transform;
+    height: 120%;
+    top: -10%;
+}
+
+/* ── Rooms: tilt card wrapper and glare ── */
+.plan-card-wrap {
+    height: 100%;
+}
+
+.plan-card {
+    height: 100%;
+    will-change: transform;
+}
+
+.plan-glare {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--glare-x, 50%) 30%, rgba(255, 255, 255, 0.22), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.plan-card:hover .plan-glare {
+    opacity: 1;
+}
+
+.plan-zoom-overlay {
+    z-index: 2;
+}
+
+/* ── Gallery: tiles are buttons; filter pill glides between tabs ── */
+.gallery-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: zoom-in;
+}
+
+.gallery-item:focus-visible {
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+}
+
+.filter-btn {
+    position: relative;
+    isolation: isolate;
+}
+
+.filter-btn.active {
+    background: transparent;
+    border-color: var(--primary-color);
+}
+
+.filter-pill {
+    position: absolute;
+    inset: -1px;
+    border-radius: 100px;
+    background: var(--primary-color);
+    z-index: -1;
+}
+
+/* ── Lightbox (rendered only while open) ── */
+.lightbox {
+    display: flex;
+    animation: none;
+}
+
+.lightbox-content-wrapper {
+    align-items: center;
+}
+
+.lightbox-content {
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    transition: none;
+}
+
+.lightbox-content:active {
+    cursor: grabbing;
+}
+
+.lightbox-counter {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.lightbox-caption {
+    text-align: center;
+}
+
+/* ── Testimonials ── */
+.testimonial-slide {
+    cursor: grab;
+    touch-action: pan-y;
+}
+
+.testimonial-slide:active {
+    cursor: grabbing;
+}
+
+.carousel-dot {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: rgba(196, 160, 90, 0.35);
+}
+
+.carousel-dot-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--gold-gradient);
+    transform-origin: left;
+}
+
+/* ── FAQ: Motion animates the height ── */
+.faq-answer,
+.faq-item.active .faq-answer {
+    max-height: none;
+    overflow: hidden;
+    transition: none;
+}
+
+.faq-item.active .faq-icon {
+    transform: none;
+}
+
+/* ── No-lift notice: Motion animates the text height and the chevron ── */
+.no-lift-text,
+.no-lift-notice.expanded .no-lift-text,
+.no-lift-notice .no-lift-text {
+    max-height: none;
+    opacity: 1;
+    margin-top: 0;
+    padding-top: 4px;
+    transition: none;
+}
+
+.no-lift-notice.expanded .no-lift-expand-indicator svg {
+    transform: none;
+}
+
+/* Mobile always shows the text, so the chevron is hidden there (see global.css) */
+
+/* ── Lead modal / toast: Motion handles enter and exit ── */
+.lead-modal,
+.lead-modal.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+}
+
+/* Animation wrapper keeps the left panel's column layout (badge sizes to its text) */
+.lead-modal-left-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.lead-modal-container,
+.lead-modal.show-modal .lead-modal-container {
+    transform: none;
+    transition: none;
+}
+
+.toast,
+.toast.show {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+}
+
+/* ── Video reel scales into place on scroll ── */
+.video-container {
+    will-change: transform;
+}
+
+/* The closed mobile menu sits just off-screen; its shadow bled onto the left edge */
+@media (max-width: 1240px) {
+    .nav-menu {
+        box-shadow: none;
+    }
+
+    .nav-menu.active {
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-bg {
+        height: 115%;
+        top: -7%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-tagline {
+        font-size: 0.62rem;
+        letter-spacing: 0.24em;
+        padding: 7px 14px;
+        white-space: nowrap;
+    }
+}

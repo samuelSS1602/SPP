@@ -10,19 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        window.addEventListener('load', () => {
-            // Smooth fade out
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-            }, 800); // 800ms elegant display duration
-        });
-        
-        // Backup safety check: if load event already fired or fails to trigger
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.visibility = 'hidden';
-        }, 3000);
+        let preloaderDone = false;
+
+        // Fade the name out, then part the two curtain panels to reveal the page
+        const hidePreloader = () => {
+            if (preloaderDone) return;
+            preloaderDone = true;
+            preloader.classList.add('is-done');
+            document.body.classList.add('is-loaded'); // starts the hero entrance
+            setTimeout(() => { preloader.style.display = 'none'; }, 1400);
+        };
+
+        // Keep it up long enough for the gold line to finish drawing, even on fast loads
+        const minShowMs = 1400;
+        const shownAt = performance.now();
+        const hideAfterMinimum = () => {
+            setTimeout(hidePreloader, Math.max(0, minShowMs - (performance.now() - shownAt)));
+        };
+
+        if (document.readyState === 'complete') {
+            hideAfterMinimum();
+        } else {
+            window.addEventListener('load', hideAfterMinimum);
+        }
+
+        // Backup safety check in case the load event is slow (large images, video)
+        setTimeout(hidePreloader, 3000);
     }
 
     // ==========================================
@@ -105,13 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
+    // Stagger siblings in grids (cards, gallery tiles) so they cascade in
+    revealElements.forEach(el => {
+        const siblings = el.parentElement
+            ? Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal-on-scroll'))
+            : [];
+        if (siblings.length > 1) {
+            const idx = siblings.indexOf(el);
+            el.style.transitionDelay = `${Math.min(idx % 4, 3) * 110}ms`;
+        }
+    });
+
     if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active-reveal');
+                    const target = entry.target;
+                    target.classList.add('active-reveal');
+                    // Drop the stagger delay afterwards so hover/filter transitions stay snappy
+                    setTimeout(() => { target.style.transitionDelay = ''; }, 1500);
                     // Stop observing once animated
-                    observer.unobserve(entry.target);
+                    observer.unobserve(target);
                 }
             });
         }, {
