@@ -1,14 +1,15 @@
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { CONTACT, TESTIMONIALS } from '../data/site';
-import { EASE, Reveal, SectionHeader } from './Motion';
+import { EASE, Reveal, SectionHeader, withBlur } from './Motion';
 
 const AUTOPLAY_MS = 7000;
 
+const [blurOut, blurIn] = withBlur({}, {});
 const slide = {
-    enter: (dir) => ({ opacity: 0, x: dir * 60, filter: 'blur(6px)' }),
-    center: { opacity: 1, x: 0, filter: 'blur(0px)' },
-    exit: (dir) => ({ opacity: 0, x: dir * -60, filter: 'blur(6px)' }),
+    enter: (dir) => ({ ...blurOut, opacity: 0, x: dir * 60 }),
+    center: { ...blurIn, opacity: 1, x: 0 },
+    exit: (dir) => ({ ...blurOut, opacity: 0, x: dir * -60 }),
 };
 
 export default function Testimonials() {

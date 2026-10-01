@@ -43,15 +43,45 @@ export const FEATURES = [
     { icon: 'phone', title: '24/7 Desk Assistance', text: 'Responsive reception team to assist with room service, local guidance, and taxi arrangements.' },
 ];
 
+// Each amenity shows a real photo of that facility
 export const AMENITIES = [
-    { icon: 'snow', title: 'Split A/C Cooling', text: 'High-end split air conditioning systems in Deluxe A/C rooms to escape the outside heat.' },
-    { icon: 'tv', title: 'LED Smart TVs', text: 'Wall-mounted Smart TVs in all rooms featuring international satellite entertainment and news channels.' },
-    { icon: 'wifi', title: 'Free High-Speed WiFi', text: 'Abundant high-speed wireless internet connection spanning across all rooms and common areas.' },
-    { icon: 'drop', title: 'Hot Water Geysers', text: 'Dedicated geysers fitted in every room bathroom, assuring hot water anytime of the day.' },
-    { icon: 'lock', title: '24/7 Security CCTV', text: 'Secured perimeter monitored constantly with CCTV surveillance cameras and active wardens.' },
-    { icon: 'user', title: 'Room Service', text: 'Prompt standard room service ensuring towels, fresh water, and linens are just a bell-call away.' },
-    { icon: 'car', title: 'Safe Private Parking', text: 'Free spacious parking area protected by boundary walls, safe for family SUVs and pilgrim buses.' },
-    { icon: 'bolt', title: 'Power Generator Backup', text: '100% automatic power backup generators, ensuring lights, fans, and geysers function during outages.' },
+    { icon: 'snow', image: 'ROOM3.webp', title: 'Split A/C Cooling', text: 'High-end split air conditioning systems in Deluxe A/C rooms to escape the outside heat.' },
+    { icon: 'tv', image: 'ROOM8.webp', title: 'LED Smart TVs', text: 'Wall-mounted Smart TVs in all rooms featuring international satellite entertainment and news channels.' },
+    { icon: 'wifi', image: 'ROOM7.webp', title: 'Free High-Speed WiFi', text: 'Abundant high-speed wireless internet connection spanning across all rooms and common areas.' },
+    { icon: 'drop', image: 'BATHROOM4.webp', title: 'Hot Water Geysers', text: 'Dedicated geysers fitted in every room bathroom, assuring hot water anytime of the day.' },
+    { icon: 'lock', image: 'CORRIDOR3.webp', title: '24/7 Security CCTV', text: 'Secured perimeter monitored constantly with CCTV surveillance cameras and active wardens.' },
+    { icon: 'user', image: 'ROOM5.webp', title: 'Room Service', text: 'Prompt standard room service ensuring towels, fresh water, and linens are just a bell-call away.' },
+    { icon: 'car', image: 'PARKING.webp', title: 'Safe Private Parking', text: 'Free spacious parking area protected by boundary walls, safe for family SUVs and pilgrim buses.' },
+    { icon: 'bolt', image: 'CORRIDOR0.webp', title: 'Power Generator Backup', text: '100% automatic power backup generators, ensuring lights, fans, and geysers function during outages.' },
+];
+
+// Hero background slideshow (crossfades with a slow zoom)
+export const HERO_SLIDES = [
+    { src: 'MALAI.webp', label: 'Palani Hill Temple', position: 'center 40%' },
+    { src: 'FRONTAGE.webp', label: 'Our Lodge', position: 'center 30%' },
+    { src: 'ROOM2.webp', label: 'Deluxe Rooms', position: 'center 60%' },
+    { src: 'CORRIDOR0.webp', label: 'Marble Corridors', position: 'center 35%' },
+];
+
+// About section photo collage
+export const ABOUT_PHOTOS = {
+    main: { src: 'ROOM2.webp', alt: 'Deluxe king room with gold accent bedding' },
+    top: { src: 'CORRIDOR1.webp', alt: 'Marble corridor with lotus room nameplate' },
+    bottom: { src: 'BATHROOM1.webp', alt: 'Marble-finish bathroom' },
+};
+
+// Continuously scrolling photo strip
+export const RIBBON = [
+    { src: 'ROOM6.webp', title: 'Swan Towel Welcome' },
+    { src: 'CORRIDOR0.webp', title: 'Marble Corridor' },
+    { src: 'BATHROOM3.webp', title: 'Rain Shower' },
+    { src: 'FRONTAGE.webp', title: 'Lodge Frontage' },
+    { src: 'ROOM8.webp', title: 'LED Smart TV' },
+    { src: 'CORRIDOR3.webp', title: 'Grand Staircase' },
+    { src: 'PARKING.webp', title: 'Private Parking' },
+    { src: 'ROOM3.webp', title: 'Room Interior' },
+    { src: 'BOARD.webp', title: 'Lodge Signboard' },
+    { src: 'ROOM4.webp', title: 'Tea & Coffee Tray' },
 ];
 
 export const ROOMS = [
@@ -111,9 +141,9 @@ export const GALLERY = [
     { src: 'CORRIDOR1.webp', cat: 'corridors', title: 'Room 105', alt: 'Room 105 entrance with lotus nameplate' },
     { src: 'CORRIDOR3.webp', cat: 'corridors', title: 'Grand Staircase', alt: 'Marble staircase with steel railings' },
     { src: 'CORRIDOR4.webp', cat: 'corridors', title: 'Staircase Landing', alt: 'Staircase landing with curtained window' },
-    { src: 'PARKING.png', cat: 'parking', title: 'Covered Private Parking', alt: 'Covered private parking area with cars parked', featured: true },
-    { src: 'FRONTAGE.png', cat: 'exterior', title: 'Lodge Frontage', alt: 'Sri Padmavati Pleasants building exterior' },
-    { src: 'BOARD.png', cat: 'exterior', title: 'Lodge Signboard', alt: 'Sri Padmavati Pleasants signboard listing A/C rooms, hot water, WiFi and parking' },
+    { src: 'PARKING.webp', cat: 'parking', title: 'Covered Private Parking', alt: 'Covered private parking area with cars parked', featured: true },
+    { src: 'FRONTAGE.webp', cat: 'exterior', title: 'Lodge Frontage', alt: 'Sri Padmavati Pleasants building exterior' },
+    { src: 'BOARD.webp', cat: 'exterior', title: 'Lodge Signboard', alt: 'Sri Padmavati Pleasants signboard listing A/C rooms, hot water, WiFi and parking' },
 ];
 
 export const CATEGORY_LABELS = {

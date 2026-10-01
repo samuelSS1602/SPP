@@ -2,12 +2,11 @@ import { useMemo, useRef, useState } from 'react';
 import { AnimatePresence, LayoutGroup, motion, useInView } from 'motion/react';
 import { CATEGORY_LABELS, GALLERY, GALLERY_FILTERS } from '../data/site';
 import { Icon } from './Icons';
-import { EASE, Reveal, SectionHeader } from './Motion';
+import { EASE, Reveal, SectionHeader, withBlur } from './Motion';
 
 const counts = GALLERY.reduce((acc, item) => ({ ...acc, [item.cat]: (acc[item.cat] || 0) + 1 }), {});
 
-const HIDDEN = { opacity: 0, scale: 0.92, filter: 'blur(6px)' };
-const SHOWN = { opacity: 1, scale: 1, filter: 'blur(0px)' };
+const [HIDDEN, SHOWN] = withBlur({ opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1 });
 
 export default function Gallery({ onViewImage }) {
     const [filter, setFilter] = useState('all');

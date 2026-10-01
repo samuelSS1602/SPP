@@ -83,13 +83,6 @@ body {
     align-items: center;
 }
 
-.preloader-logo-container {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 25px;
-    position: relative;
-}
-
 .preloader-logo {
     width: 100%;
     height: 100%;
@@ -98,16 +91,6 @@ body {
     padding: 5px;
     background: rgba(255, 255, 255, 0.05);
     animation: pulseLogo 2s infinite ease-in-out;
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(197, 160, 71, 0.15);
-    border-radius: 50%;
-    border-top-color: var(--accent-gold);
-    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    margin-bottom: 20px;
 }
 
 .preloader-text {
@@ -129,31 +112,10 @@ body {
 }
 
 /* ── 4. KEYFRAME ANIMATIONS ── */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 @keyframes pulseLogo {
     0%, 100% { transform: scale(1); opacity: 0.8; }
     50% { transform: scale(1.08); opacity: 1; box-shadow: 0 0 20px rgba(197, 160, 71, 0.4); }
-}
-
-@keyframes kenBurns {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes fadeIn {
@@ -171,11 +133,6 @@ body {
     0% { box-shadow: 0 0 0 0 rgba(197, 160, 71, 0.5); }
     70% { box-shadow: 0 0 0 20px rgba(197, 160, 71, 0); }
     100% { box-shadow: 0 0 0 0 rgba(197, 160, 71, 0); }
-}
-
-@keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
 }
 
 /* ── 5. UTILITY & LAYOUT ── */
@@ -332,41 +289,7 @@ body {
     height: 18px;
 }
 
-.btn-text {
-    background: transparent;
-    border: none;
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    text-decoration: none;
-}
-
-.btn-text:hover {
-    color: var(--accent-gold);
-    transform: translateX(4px);
-}
-
 /* Scroll reveal system classes */
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-on-scroll.active-reveal {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
 
 /* ── 6. HEADER & STICKY NAVIGATION ── */
 .header {
@@ -533,14 +456,6 @@ body {
     z-index: 1;
 }
 
-.hero-image-zoom {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    animation: kenBurns 20s infinite alternate ease-in-out;
-}
-
 .hero-content-wrapper {
     position: relative;
     z-index: 2;
@@ -605,11 +520,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
     flex-wrap: wrap;
-}
-
-.stats-top-row {
-    display: flex;
-    gap: 30px;
 }
 
 .stat-badge {
@@ -1270,12 +1180,6 @@ body {
     background-color: var(--text-white);
 }
 
-.floor-plans-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
 .plan-card {
     background: var(--text-light-bg);
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -1394,11 +1298,6 @@ body {
 
 .plan-actions .btn {
     width: 100%;
-}
-
-.plan-actions .btn-text {
-    justify-content: center;
-    font-size: 0.8rem;
 }
 
 /* ── 13. LOCATION ADVANTAGE SECTION ── */
@@ -2113,10 +2012,6 @@ body {
     color: var(--accent-gold);
 }
 
-.minimal-footer {
-    display: none; /* Hidden since we use the complete premium footer now */
-}
-
 /* ── 18. FLOATING ELEMENTS ── */
 /* Scroll to Top Widget */
 .scroll-to-top {
@@ -2414,17 +2309,6 @@ body {
     margin-bottom: 25px;
 }
 
-.modal-callback-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.modal-callback-form .form-group input, .modal-callback-form .form-group select {
-    background-color: var(--text-light-bg);
-    border: 1px solid rgba(0,0,0,0.08);
-}
-
 .modal-footer-phone {
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -2461,10 +2345,6 @@ body {
     color: var(--text-dark);
     font-variant-numeric: lining-nums;
     text-rendering: optimizeLegibility;
-}
-
-body.menu-open {
-    overflow: hidden;
 }
 
 ::selection {
@@ -2546,9 +2426,6 @@ body.menu-open {
 }
 
 /* Hero */
-.hero-image-zoom {
-    animation-duration: 30s;
-}
 
 .hero-bg::after {
     content: '';
@@ -3762,12 +3639,6 @@ body.menu-open {
         transition-delay: 0s !important;
         scroll-behavior: auto !important;
     }
-
-    .reveal-on-scroll {
-        opacity: 1;
-        transform: none;
-        filter: none;
-    }
 }
 
 /* ── 20. RESPONSIVE BREAKPOINTS ── */
@@ -3796,10 +3667,6 @@ body.menu-open {
     
     .amenities-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .floor-plans-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -3889,10 +3756,6 @@ body.menu-open {
 
     .about-text-col {
         order: 1;
-    }
-    
-    .about-features-col {
-        order: 2;
     }
     
     .map-container {
@@ -4087,10 +3950,6 @@ body.menu-open {
 
     .plan-details {
         padding: 28px 22px 32px;
-    }
-    
-    .floor-plans-grid {
-        grid-template-columns: 1fr;
     }
     
     .testimonials-carousel-wrapper {

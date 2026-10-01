@@ -17,7 +17,7 @@ export default function VideoReel() {
 
                 <div className="video-reel-wrapper" ref={ref}>
                     <motion.div className="video-container" style={{ scale, borderRadius: radius }}>
-                        <video className="video-reel-player" controls playsInline preload="metadata" width="100%" poster="/assets/FRONTAGE.png">
+                        <video className="video-reel-player" controls playsInline preload="none" width="100%" poster="/assets/FRONTAGE.webp">
                             <source src={REEL_URL} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>

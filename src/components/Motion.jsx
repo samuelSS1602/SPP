@@ -2,10 +2,21 @@ import { motion } from 'motion/react';
 
 export const EASE = [0.22, 1, 0.36, 1];
 
-// Soft blur-to-sharp rise used for all scroll reveals
+// Phones and touch devices skip blur filters: each blurred element becomes its own
+// GPU layer, which makes scrolling stutter on mid-range phones
+export const LITE =
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+
+// Adds a soft blur to a hidden/shown pair of states on desktop only
+export const withBlur = (hidden, shown, px = 6) =>
+    LITE ? [hidden, shown] : [{ ...hidden, filter: `blur(${px}px)` }, { ...shown, filter: 'blur(0px)' }];
+
+const [revealHidden, revealShown] = withBlur({ opacity: 0, y: LITE ? 24 : 36 }, { opacity: 1, y: 0 });
+
+// Soft rise (blur-to-sharp on desktop) used for all scroll reveals
 export const fadeUp = {
-    hidden: { opacity: 0, y: 36, filter: 'blur(6px)' },
-    show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1, ease: EASE } },
+    hidden: revealHidden,
+    show: { ...revealShown, transition: { duration: LITE ? 0.8 : 1, ease: EASE } },
 };
 
 export const stagger = (step = 0.1, delay = 0) => ({

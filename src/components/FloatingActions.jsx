@@ -3,6 +3,7 @@ import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { CONTACT, waLink } from '../data/site';
 import { Icon, WhatsAppIcon } from './Icons';
 import { scrollToTarget } from '../lib/smoothScroll';
+import { useSite } from '../context/SiteContext';
 
 const pop = {
     hidden: { opacity: 0, scale: 0.4, y: 20 },
@@ -10,10 +11,13 @@ const pop = {
     show: ({ i, entered }) => ({ opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 320, damping: 20, delay: entered ? 0 : 2 + i * 0.12 } }),
 };
 
+const WA_LINK = waLink("Hello! I'm inquiring about booking rooms at Sri Padmavati Pleasants. Please share room availability details.");
+
 const HOVER = { scale: 1.1, y: -3 };
 const TAP = { scale: 0.94 };
 
 export default function FloatingActions({ loaded }) {
+    const { openModal } = useSite();
     const [showTop, setShowTop] = useState(false);
     const [entered, setEntered] = useState(false);
     const onDone = (def) => def === 'show' && setEntered(true);
@@ -38,8 +42,29 @@ export default function FloatingActions({ loaded }) {
                 <span className="floating-btn-tooltip">Call: {CONTACT.phoneShort}</span>
             </motion.a>
 
+            {/* Phones: one bottom bar instead of floating circles that cover content */}
+            <motion.nav
+                className="mobile-action-bar"
+                aria-label="Quick contact"
+                initial={{ y: 120 }}
+                animate={loaded ? { y: 0 } : { y: 120 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 28, delay: loaded ? 1.6 : 0 }}
+            >
+                <a href={`tel:${CONTACT.phone}`} className="mab-item">
+                    <Icon name="phone" size={18} strokeWidth={2} />
+                    <span>Call</span>
+                </a>
+                <a href={WA_LINK} target="_blank" rel="noopener" className="mab-item mab-whatsapp">
+                    <WhatsAppIcon className="mab-wa-icon" />
+                    <span>WhatsApp</span>
+                </a>
+                <button type="button" className="mab-item mab-book" onClick={openModal}>
+                    Book Now
+                </button>
+            </motion.nav>
+
             <motion.a
-                href={waLink("Hello! I'm inquiring about booking rooms at Sri Padmavati Pleasants. Please share room availability details.")}
+                href={WA_LINK}
                 className="floating-whatsapp-btn"
                 target="_blank"
                 rel="noopener"

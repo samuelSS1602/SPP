@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useRef } from 'react';
-import { animate, motion, useInView, useScroll, useTransform } from 'motion/react';
-import { HERO_STATS, waLink } from '../data/site';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import { animate, AnimatePresence, motion, useInView, useScroll, useTransform } from 'motion/react';
+import { HERO_SLIDES, HERO_STATS, waLink } from '../data/site';
 import { useSite } from '../context/SiteContext';
-import { EASE } from './Motion';
+import { EASE, withBlur } from './Motion';
 import { WhatsAppIcon } from './Icons';
 
 const container = {
@@ -10,9 +10,10 @@ const container = {
     show: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
 };
 
+const [riseHidden, riseShown] = withBlur({ opacity: 0, y: 28 }, { opacity: 1, y: 0 });
 const rise = {
-    hidden: { opacity: 0, y: 28, filter: 'blur(6px)' },
-    show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1.1, ease: EASE } },
+    hidden: riseHidden,
+    show: { ...riseShown, transition: { duration: 1.1, ease: EASE } },
 };
 
 // Each word slides up from behind a mask
@@ -53,9 +54,27 @@ function CountUp({ to }) {
     return <span ref={ref} className="stat-badge-num">0</span>;
 }
 
+const SLIDE_MS = 6500;
+
 export default function Hero({ loaded }) {
     const { openModal } = useSite();
     const ref = useRef(null);
+    const [slide, setSlide] = useState(0);
+
+    // Advance after each interval; restarts when a tab is clicked
+    useEffect(() => {
+        if (!loaded) return undefined;
+        const t = setTimeout(() => setSlide((s) => (s + 1) % HERO_SLIDES.length), SLIDE_MS);
+        return () => clearTimeout(t);
+    }, [slide, loaded]);
+
+    // Warm the cache so each crossfade starts with the image ready
+    useEffect(() => {
+        HERO_SLIDES.forEach((s) => {
+            const img = new Image();
+            img.src = `/assets/${s.src}`;
+        });
+    }, []);
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
     const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
     const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
@@ -66,13 +85,53 @@ export default function Hero({ loaded }) {
     return (
         <section className="hero" id="home" ref={ref}>
             <motion.div className="hero-bg" style={{ y: bgY }}>
-                <div
-                    className="hero-image-zoom"
-                    style={{
-                        backgroundImage:
-                            "linear-gradient(to bottom, rgba(10, 22, 40, 0.8), rgba(10, 22, 40, 0.9)), url('/assets/MALAI.webp')",
-                    }}
-                />
+                <AnimatePresence initial={false}>
+                    <motion.div
+                        key={slide}
+                        className="hero-slide"
+                        style={{
+                            backgroundImage: `url('/assets/${HERO_SLIDES[slide].src}')`,
+                            backgroundPosition: HERO_SLIDES[slide].position,
+                        }}
+                        initial={{ opacity: 0, scale: 1.14 }}
+                        animate={{ opacity: 1, scale: 1.02 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ opacity: { duration: 1.8, ease: 'easeInOut' }, scale: { duration: SLIDE_MS / 1000 + 2, ease: 'linear' } }}
+                    />
+                </AnimatePresence>
+                <div className="hero-overlay" />
+            </motion.div>
+
+            {/* Slide labels with progress bars */}
+            <motion.div
+                className="hero-slide-nav"
+                initial={{ opacity: 0, y: 12 }}
+                animate={loaded ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 1.6, duration: 0.9, ease: EASE }}
+            >
+                {HERO_SLIDES.map((s, i) => (
+                    <button
+                        key={s.src}
+                        type="button"
+                        className={`hero-slide-tab${i === slide ? ' active' : ''}`}
+                        onClick={() => setSlide(i)}
+                        aria-label={`Show ${s.label}`}
+                    >
+                        <span className="hero-slide-num">0{i + 1}</span>
+                        <span className="hero-slide-label">{s.label}</span>
+                        <span className="hero-slide-bar">
+                            {i === slide && loaded && (
+                                <motion.span
+                                    key={slide}
+                                    className="hero-slide-bar-fill"
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: SLIDE_MS / 1000, ease: 'linear' }}
+                                />
+                            )}
+                        </span>
+                    </button>
+                ))}
             </motion.div>
 
             <motion.div className="hero-content-wrapper container" style={{ y: contentY, opacity: contentOpacity }}>

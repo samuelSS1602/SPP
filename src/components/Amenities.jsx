@@ -78,14 +78,19 @@ export default function Amenities() {
 
                 <RevealGroup className="amenities-grid" step={0.08}>
                     {AMENITIES.map((a) => (
-                        <RevealItem className="amenity-card" key={a.title} whileHover={lift}>
+                        <RevealItem className="amenity-card amenity-card--photo" key={a.title} whileHover={lift}>
+                            <div className="amenity-photo">
+                                <img src={`/assets/${a.image}`} alt="" loading="lazy" decoding="async" />
+                            </div>
                             <div className="amenity-visual">
                                 <div className="amenity-icon-box">
                                     <Icon name={a.icon} />
                                 </div>
                             </div>
-                            <h3>{a.title}</h3>
-                            <p>{a.text}</p>
+                            <div className="amenity-body">
+                                <h3>{a.title}</h3>
+                                <p>{a.text}</p>
+                            </div>
                         </RevealItem>
                     ))}
                 </RevealGroup>

@@ -6,6 +6,7 @@ import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import PhotoRibbon from './components/PhotoRibbon';
 import Booking from './components/Booking';
 import Amenities from './components/Amenities';
 import Rooms from './components/Rooms';
@@ -38,6 +39,7 @@ export default function App() {
                 <main>
                     <Hero loaded={loaded} />
                     <About />
+                    <PhotoRibbon onViewImage={openLightbox} />
                     <Booking />
                     <Amenities />
                     <Rooms onViewImage={openLightbox} />

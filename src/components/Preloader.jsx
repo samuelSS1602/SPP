@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const MIN_SHOW_MS = 1400; // long enough for the gold line to finish drawing
+const NAME = 'Sri Padmavati Pleasants';
+const MIN_SHOW_MS = 2100; // long enough for the name to spell out and the gold line to draw
 const MAX_SHOW_MS = 3000; // never hold the page longer than this on slow loads
 const EXIT_MS = 1400;     // curtain transition length in CSS
 
@@ -44,9 +45,19 @@ export default function Preloader({ onOpen }) {
             <div className="preloader-curtain preloader-curtain-bottom" />
             <div className="preloader-inner">
                 <img src="/assets/SPP PIC.webp" alt="" className="preloader-logo" />
-                <p className="preloader-text">Sri Padmavati</p>
+                <p className="preloader-text" aria-label={NAME}>
+                    {NAME.split('').map((ch, i) => (
+                        <span
+                            key={i}
+                            className="preloader-letter"
+                            style={{ animationDelay: `${0.25 + i * 0.035}s` }}
+                        >
+                            {ch === ' ' ? ' ' : ch}
+                        </span>
+                    ))}
+                </p>
                 <div className="preloader-line"><span /></div>
-                <span className="preloader-subtitle">Pleasants &middot; Palani</span>
+                <span className="preloader-subtitle">Luxury Lodge &middot; Palani</span>
             </div>
         </div>
     );
